@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ColorBlocks from "./ColorBlocks";
 
 const projects = [
   {
@@ -48,6 +49,8 @@ export default function Portfolio() {
                   alt={project.title}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index === 0} // Prioritize the first image for LCP
                 />
               </div>
               <div className="p-6">

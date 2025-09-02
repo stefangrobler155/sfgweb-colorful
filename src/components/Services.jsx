@@ -66,11 +66,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-
-      {/* Animated Color Block Divider at Bottom */}
-      <div className="absolute bottom-0 left-0 w-full">
-        <ColorBlocks />
-      </div>
     </section>
   );
 }

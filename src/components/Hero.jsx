@@ -34,6 +34,7 @@ export default function Hero() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="mt-10 inline-block bg-[var(--accent-color-1)] text-white font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-[var(--accent-color-5)] transition"
+        aria-label="View my services and portfolio"
       >
         View My Work
       </motion.a>
