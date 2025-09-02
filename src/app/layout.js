@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import ColorBlocks from "@/components/ColorBlocks";
 
 export const metadata = {
   title: "SFG Portfolio",
@@ -12,6 +14,8 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+        <Footer />
+        <ColorBlocks />
       </body>
     </html>
   );

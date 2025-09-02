@@ -1,8 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Contact() {
+  const [status, setStatus] = useState(null);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const response = await fetch(process.env.FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" }); // Clear form
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-[var(--secondary-color)] text-[var(--primary-color)]">
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -14,28 +46,48 @@ export default function Contact() {
         >
           Get in <span className="text-[var(--accent-color-2)]">Touch</span>
         </motion.h2>
-        <form className="max-w-md mx-auto space-y-4">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Your Name"
             className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)]"
+            required
           />
           <input
             type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Your Email"
             className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)]"
+            required
           />
           <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder="Your Message"
-            className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)]"
+            className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)] h-32"
+            required
           />
           <motion.button
+            type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-xl bg-[var(--accent-color-1)] text-white font-semibold"
+            className="px-6 py-3 rounded-xl bg-[var(--accent-color-1)] text-white font-semibold w-full"
+            disabled={status === "sending"}
           >
-            Send Message
+            {status === "sending" ? "Sending..." : "Send Message"}
           </motion.button>
+          {status === "success" && (
+            <p className="text-green-500 text-sm">Message sent successfully!</p>
+          )}
+          {status === "error" && (
+            <p className="text-red-500 text-sm">Failed to send message. Please try again.</p>
+          )}
         </form>
       </div>
     </section>

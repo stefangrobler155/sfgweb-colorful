@@ -20,6 +20,7 @@ export default function ColorBlocks({ height = "h-8" }) {
           style={{ backgroundColor: color }}
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          whileHover={{ scale: 1.1, rotate: 2 }}
           transition={{ duration: 0.6, delay: i * 0.15 }}
           viewport={{ once: true }}
         />
