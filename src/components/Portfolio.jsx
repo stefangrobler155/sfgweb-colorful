@@ -5,26 +5,29 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "WooCommerce + Next.js Store",
+    title: "Lumina Lens Studio - Headless WordPress & Next.js Website",
     image: "/projects/project1.jpg",
-    tech: ["Next.js", "WooCommerce", "TailwindCSS"],
-    link: "#",
-    github: "https://github.com/yourusername/woocommerce-nextjs-store",
+    description: "Developed a fully functional photography website using a headless WordPress backend with the ACF plugin and a Next.js frontend. Implemented custom API data fetching with TypeScript, designed responsive layouts with Tailwind CSS, and optimized performance with Turbopack. This project highlights skills in React, Next.js, WordPress integration, and modern web development practices.",
+    tech: ["Next.js", "Wordpress", "Tailwind CSS", "TypeScript", "ACF", "Turbopack", "Framer Motion"],
+    link: "https://lls-two.vercel.app/",
+    github: "https://github.com/stefangrobler155/lls",
   },
   {
-    title: "Custom WordPress Site",
+    title: "Brew & Beyond Blog - Headless WordPress & Next.js Blog",
     image: "/projects/project2.jpg",
-    tech: ["WordPress", "Elementor", "PHP"],
-    link: "#",
-    github: "https://github.com/yourusername/custom-wordpress-site",
+    description: "Developed a fully functional blog using a headless WordPress backend and a Next.js React frontend. Learned to integrate WordPress API for dynamic content fetching, implemented responsive design with Tailwind CSS, and utilized Next.js features like SSG for performance.",
+    tech: ["Next.js", "Tailwind CSS", "WordPress API", "Fetch API", "Framer Motion"],
+    link: "https://bbblog-eight.vercel.app/",
+    github: "https://github.com/stefangrobler155/bbblog",
   },
   {
-    title: "Portfolio Blog",
+    title: "ImageVault: Headless WooCommerce E-Commerce Demo",
     image: "/projects/project3.jpg",
-    tech: ["Next.js", "Headless WP", "Framer Motion"],
-    link: "#",
-    github: "https://github.com/yourusername/portfolio-blog",
-  },
+    description: "A React-based frontend for a headless WordPress WooCommerce store, built to learn and demonstrate the e-commerce flow: browsing products, managing cart, checkout (with Cash on Delivery), order confirmation, and downloading virtual files. Focuses on integrating with the WP REST API for a decoupled architecture—backend handles data/security, frontend manages UI/state.",
+    tech: ["React", "Headless WP", "WooCommerce", "REST API"],
+    link: "https://download-store-gamma.vercel.app/",
+    github: "https://github.com/stefangrobler155/download-store",
+  }
 ];
 
 export default function Portfolio() {
@@ -45,7 +48,7 @@ export default function Portfolio() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="relative w-full h-56">
+              <div className="relative w-full h-70">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -70,6 +73,8 @@ export default function Portfolio() {
                 <div className="space-y-4">
                   <motion.a
                     href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block px-5 py-2 rounded-xl bg-[var(--accent-color-1)] text-white font-medium transition text-center w-full"
                     whileHover={{ scale: 1.05, backgroundColor: "#ff5722" }}
                     whileTap={{ scale: 0.95 }}

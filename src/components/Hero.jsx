@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[var(--primary-color)]">
+    <section className="max-w-7xl mx-auto min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[var(--primary-color)]">
       {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
@@ -30,7 +30,7 @@ export default function Hero() {
 
       {/* CTA */}
       <motion.a
-        href="#services"
+        href="#portfolio"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="mt-10 inline-block bg-[var(--accent-color-1)] text-white font-semibold px-6 py-3 rounded-2xl shadow-lg hover:bg-[var(--accent-color-5)] transition"
