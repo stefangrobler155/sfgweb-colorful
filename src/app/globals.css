@@ -11,3 +11,7 @@
   --text-color: #330e00;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 94px; 
+}

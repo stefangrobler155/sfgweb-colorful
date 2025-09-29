@@ -13,10 +13,10 @@ export default function Footer() {
           className="mb-4"
         >
           <h3 className="text-xl font-semibold text-[var(--accent-color-2)]">
-            Stefan | SFG Web
+           SFGWeb
           </h3>
           <p className="mt-1 text-sm text-[var(--text-color)]">
-            Frontend developer based in Cape Town, South Africa. Available for freelance projects.
+            Frontend & WordPress developer based in South Africa. Available for freelance projects.
           </p>
         </motion.div>
         <p className="text-sm text-[var(--text-color)]">Email: stefan@sfgweb.com</p>

@@ -12,8 +12,8 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-5xl md:text-7xl font-extrabold text-[var(--text-color)]"
       >
-        I build{" "}
-        <span className="text-[var(--accent-color-1)]">custom frontends</span>{" "}
+        Building Scalable,{" "}
+        <span className="text-[var(--accent-color-1)]">Modern Websites</span>{" "}
         with Next.js & WordPress
       </motion.h1>
 
@@ -24,8 +24,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 0.3 }}
         className="mt-6 text-lg md:text-xl max-w-2xl text-[var(--secondary-color)]"
       >
-        Hi, I’m Stefan. I help businesses build modern, scalable, and animated
-        websites using Next.js, WordPress, and WooCommerce.
+        I’m Stefan, a frontend developer specializing in performance-driven websites. I craft seamless digital experiences with Next.js, Tailwind CSS, and WordPress—helping businesses grow with fast, responsive, and user-focused solutions.
       </motion.p>
 
       {/* CTA */}

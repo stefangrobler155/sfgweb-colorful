@@ -2,23 +2,34 @@
 
 import { motion } from "framer-motion";
 import { FaCode, FaPaintBrush, FaRocket } from "react-icons/fa";
-import ColorBlocks from "./ColorBlocks";
+import { SiHeadlessui, SiWoocommerce } from "react-icons/si";
+import { RiCoinsFill } from "react-icons/ri";
 
 const services = [
   {
     icon: <FaCode size={36} />,
     title: "Frontend Development",
-    items: ["Next.js", "Headless WordPress", "WooCommerce"],
+    items: ["Next.js & React Development", "Tailwind CSS Responsive Design", "Headless WordPress Integration", "WooCommerce Setup & Customization"],
   },
   {
-    icon: <FaPaintBrush size={36} />,
-    title: "Design & Experience",
-    items: ["UI/UX Design", "Interactive Animations", "Responsive Layouts"],
+    icon: <SiHeadlessui size={36} />,
+    title: "Headless WordPress & CMS Integration",
+    items: ["Custom WordPress Themes (Headless & Classic)", "Advanced Custom Fields (ACF) Setup", "REST API / GraphQL Integration", "Content Management Solutions"],
   },
   {
     icon: <FaRocket size={36} />,
-    title: "Brand & Growth",
-    items: ["Optimization", "SEO Best Practices", "Conversion Strategy"],
+    title: "Performance & Optimization",
+    items: ["SEO-Friendly Development", "Fast Load Times (Core Web Vitals)", "Scalable & Secure Code", "Website Maintenance & Updates"],
+  },
+  {
+    icon: <RiCoinsFill size={36} />,
+    title: "E-Commerce Solutions",
+    items: ["WooCommerce Storefronts (Headless & Standard)", "Custom Checkout Flows", "Payment & Order Management", "Downloadable Products & Membership Sites"],
+  },
+  {
+    icon: <FaPaintBrush size={36} />,
+    title: "UI/UX & Interactive Experiences",
+    items: ["User-Centered Design", "Smooth Animations with Framer Motion", "Conversion-Focused Layouts", "Accessibility Best Practices"],
   },
 ];
 

@@ -3,15 +3,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "/#services" }, // Changed to absolute path
+    { name: "Portfolio", href: "/#portfolio" }, // Changed to absolute path
+    { name: "Contact", href: "/#contact" }, // Changed to absolute path
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -26,7 +28,9 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-[var(--text-color)]"
         >
-          SFG Web
+          <Link href="/">
+          <Image src="/logo.png" alt="SFGWeb Logo" width={60} height={60} className="inline-block mr-2" />
+          </Link>
         </motion.div>
 
         {/* Desktop Menu */}

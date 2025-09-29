@@ -1,36 +1,26 @@
+// src/components/Portfolio.jsx
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "Lumina Lens Studio - Headless WordPress & Next.js Website",
-    image: "/projects/project1.jpg",
-    description: "Developed a fully functional photography website using a headless WordPress backend with the ACF plugin and a Next.js frontend. Implemented custom API data fetching with TypeScript, designed responsive layouts with Tailwind CSS, and optimized performance with Turbopack. This project highlights skills in React, Next.js, WordPress integration, and modern web development practices.",
-    tech: ["Next.js", "Wordpress", "Tailwind CSS", "TypeScript", "ACF", "Turbopack", "Framer Motion"],
-    link: "https://lls-two.vercel.app/",
-    github: "https://github.com/stefangrobler155/lls",
-  },
-  {
-    title: "Brew & Beyond Blog - Headless WordPress & Next.js Blog",
-    image: "/projects/project2.jpg",
-    description: "Developed a fully functional blog using a headless WordPress backend and a Next.js React frontend. Learned to integrate WordPress API for dynamic content fetching, implemented responsive design with Tailwind CSS, and utilized Next.js features like SSG for performance.",
-    tech: ["Next.js", "Tailwind CSS", "WordPress API", "Fetch API", "Framer Motion"],
-    link: "https://bbblog-eight.vercel.app/",
-    github: "https://github.com/stefangrobler155/bbblog",
-  },
-  {
-    title: "ImageVault: Headless WooCommerce E-Commerce Demo",
-    image: "/projects/project3.jpg",
-    description: "A React-based frontend for a headless WordPress WooCommerce store, built to learn and demonstrate the e-commerce flow: browsing products, managing cart, checkout (with Cash on Delivery), order confirmation, and downloading virtual files. Focuses on integrating with the WP REST API for a decoupled architecture—backend handles data/security, frontend manages UI/state.",
-    tech: ["React", "Headless WP", "WooCommerce", "REST API"],
-    link: "https://download-store-gamma.vercel.app/",
-    github: "https://github.com/stefangrobler155/download-store",
-  }
-];
+import Link from "next/link";
+import { useState } from "react";
+import { projects } from "@/data/projects";
 
 export default function Portfolio() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage("");
+  };
+
   return (
     <section id="portfolio" className="relative py-20 bg-[var(--primary-color)]">
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -48,18 +38,28 @@ export default function Portfolio() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="relative w-full h-70">
+              <div className="relative w-full h-48 cursor-pointer" onClick={() => openModal(project.fullImage)}>
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="p-6 flex flex-col justify-between flex-grow">
                 <div>
-                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2 justify-center mb-4">
+                  <Link href={`/projects/${project.slug}`}>
+                    <h3 className="text-xl font-semibold mb-3 hover:text-[var(--accent-color-1)] transition cursor-pointer">
+                      {project.title}
+                    </h3>
+                  </Link>
+                  <p className="text-[var(--text-color)] mb-4 line-clamp-3">
+                    {project.description}
+                  </p>
+                  <Link href={`/projects/${project.slug}`} className="text-[var(--accent-color-1)] hover:underline">
+                    Read More
+                  </Link>
+                  <div className="flex flex-wrap gap-2 justify-center mb-4 mt-4">
                     {project.tech.map((t, i) => (
                       <span
                         key={i}
@@ -99,6 +99,41 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
+
+      {/* Modal for full image */}
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+          >
+            <motion.div
+              className="relative w-full h-full max-w-[80vw] max-h-[80vh] p-4" // Adjusted to 80% of viewport for desktop fit
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedImage}
+                alt="Full project image"
+                width={1200} // Fallback dimensions
+                height={800} // Fallback dimensions
+                className="object-contain w-full h-full" // Forces image to fit container
+              />
+              <button
+                className="absolute top-2 right-2 text-white text-2xl"
+                onClick={closeModal}
+              >
+                &times;
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
