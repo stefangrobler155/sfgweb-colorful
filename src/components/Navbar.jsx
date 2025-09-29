@@ -11,9 +11,9 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" }, // Changed to absolute path
-    { name: "Portfolio", href: "/#portfolio" }, // Changed to absolute path
-    { name: "Contact", href: "/#contact" }, // Changed to absolute path
+    { name: "Services", href: "/#services" }, 
+    { name: "Portfolio", href: "/#portfolio" }, 
+    { name: "Contact", href: "/#contact" }, 
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);

@@ -11,29 +11,36 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("sending");
 
-    try {
-      const response = await fetch(process.env.FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT; 
+    if (!endpoint) {
+      throw new Error("Formspree endpoint not configured");
+    }
 
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" }); // Clear form
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      console.error("Formspree response:", await response.text()); // Debug log
       setStatus("error");
     }
-  };
+  } catch (error) {
+    console.error("Submission error:", error); // Debug log
+    setStatus("error");
+  }
+};
 
   return (
     <section id="contact" className="py-20 bg-[var(--secondary-color)] text-[var(--primary-color)]">
