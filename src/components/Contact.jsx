@@ -44,7 +44,7 @@ const handleSubmit = async (e) => {
 
   return (
     <section id="contact" className="py-20 bg-[var(--secondary-color)] text-[var(--primary-color)]">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-6 text-center py-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

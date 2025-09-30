@@ -10,7 +10,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-5xl md:text-7xl font-extrabold text-[var(--text-color)]"
+        className="text-4xl md:text-7xl font-extrabold text-[var(--text-color)]"
       >
         Building Scalable,{" "}
         <span className="text-[var(--accent-color-1)]">Modern Websites</span>{" "}

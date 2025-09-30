@@ -13,15 +13,15 @@ export default function Footer() {
           className="mb-4"
         >
           <h3 className="text-xl font-semibold text-[var(--accent-color-2)]">
-           SFGWeb
+           sfgweb.co.za
           </h3>
           <p className="mt-1 text-sm text-[var(--text-color)]">
-            Frontend & WordPress developer based in South Africa. Available for freelance projects.
+            Frontend & WordPress developer based in South Africa. Available for freelance projects & employment.
           </p>
         </motion.div>
-        <p className="text-sm text-[var(--text-color)]">Email: stefan@sfgweb.com</p>
+        <p className="text-sm text-[var(--text-color)]">Email: <a href="mailto:stefan@sfgweb.co.za">stefan@sfgweb.co.za</a></p>
         <p className="text-xs text-[var(--text-color)] mt-2">
-          © 2025 Stefan | SFG Web. All rights reserved.
+          © 2025 sfgweb.co.za. All rights reserved.
         </p>
       </div>
     </footer>

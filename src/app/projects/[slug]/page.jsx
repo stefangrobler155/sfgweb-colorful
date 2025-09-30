@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import TechDetailsToggle from "@/components/TechDetailsToggle"; // Create this client component
 import { projects } from "@/data/projects";
 import ColorBlocks from "@/components/ColorBlocks";
+import BackButton from "@/components/BackButton";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params; // Next.js handles params as an object in async functions
@@ -70,6 +71,7 @@ export default async function ProjectPage({ params }) {
             </a>
           )}
         </div>
+        <BackButton />
       </div>
       <ColorBlocks />
     </section>
