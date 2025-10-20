@@ -43,7 +43,7 @@ export const projects = [
     image: "/projects/project3.jpg",
     fullImage: "/projects/project3-full.jpg",
     description:
-      "An e-commerce demo store built with React and a headless WordPress WooCommerce backend. It demonstrates a complete online shopping experience — from browsing products to checkout and digital downloads.",
+      "Designed and developed a responsive WordPress website for Lezylrie French Bulldogs, a premier South African breeder specializing in high-quality French Bulldogs. The website serves as a digital showcase for their breeding program, featuring their dogs, available litters, and breeding philosophy, while providing an engaging and user-friendly experience for potential clients.",
     aim:
       "To showcase the potential of headless WooCommerce by building a decoupled storefront that highlights flexibility and modern UX.",
     outcome:
@@ -55,5 +55,25 @@ export const projects = [
     tech: ["React", "Headless WP", "WooCommerce", "REST API"],
     link: "https://download-store-gamma.vercel.app/",
     github: "https://github.com/stefangrobler155/download-store",
+  },
+  {
+    title: "Lezylrie French Bulldogs",
+    slug: "lezylrie-french-bulldogs",
+    image: "/projects/project4.jpg",
+    fullImage: "/projects/project4-full.jpg",
+    description:
+      "An e-commerce demo store built with React and a headless WordPress WooCommerce backend. It demonstrates a complete online shopping experience — from browsing products to checkout and digital downloads.",
+    tech: ["WordPress", "Elementor"],
+    link: "https://lezylriefrenchbulldogs.co.za/",
+  },
+  {
+    title: "Lezylrie French Bulldogs",
+    slug: "lezylrie-french-bulldogs",
+    image: "/projects/project5.jpg",
+    fullImage: "/projects/project5-full.jpg",
+    description:
+      "Designed and developed a fully functional e-commerce website for Annie's Irises, a specialized Bearded Iris Nursery, using WordPress and WooCommerce. The website serves as an online storefront and informational hub, showcasing the nursery’s vibrant collection of bearded irises, facilitating online purchases, and engaging gardening enthusiasts with educational content.",
+    tech: ["WordPress", "WooCommerce", "Elementor"],
+    link: "https://anniesirises.com.au/",
   },
 ];
