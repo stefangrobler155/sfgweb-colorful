@@ -67,7 +67,7 @@ export const projects = [
     link: "https://lezylriefrenchbulldogs.co.za/",
   },
   {
-    title: "Annies Irises",
+    title: "Annie's Irises",
     slug: "annies-irises",
     image: "/projects/project5.jpg",
     fullImage: "/projects/project5-full.jpg",
