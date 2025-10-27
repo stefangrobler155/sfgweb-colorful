@@ -43,7 +43,7 @@ export const projects = [
     image: "/projects/project3.jpg",
     fullImage: "/projects/project3-full.jpg",
     description:
-      "Designed and developed a responsive WordPress website for Lezylrie French Bulldogs, a premier South African breeder specializing in high-quality French Bulldogs. The website serves as a digital showcase for their breeding program, featuring their dogs, available litters, and breeding philosophy, while providing an engaging and user-friendly experience for potential clients.",
+      "An e-commerce demo store built with React and a headless WordPress WooCommerce backend. It demonstrates a complete online shopping experience — from browsing products to checkout and digital downloads.",
     aim:
       "To showcase the potential of headless WooCommerce by building a decoupled storefront that highlights flexibility and modern UX.",
     outcome:
