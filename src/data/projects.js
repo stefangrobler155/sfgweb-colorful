@@ -5,15 +5,15 @@ export const projects = [
     image: "/projects/project1.jpg",
     fullImage: "/projects/project1-full.jpg",
     description:
-      "A modern photography portfolio built with a headless WordPress backend (ACF) and a Next.js frontend. This project focused on performance, flexibility, and delivering a highly visual experience.",
+      "A fast, visually stunning photography portfolio with a headless WordPress backend and Next.js frontend. Built for maximum performance and design freedom.",
     aim:
-      "To create a photography platform that breaks free from restrictive WordPress themes and provides complete design control.",
+      "To move away from restrictive WordPress themes and give a professional photographer complete creative control with lightning-fast loading speeds.",
     outcome:
-      "Delivered a responsive, visually striking site with lightning-fast load times and seamless content updates — praised for both its aesthetics and usability.",
+      "Delivered a beautiful, responsive site that loads instantly and makes it extremely easy for the owner to update galleries and content without any coding.",
     expertise:
-      "Leveraged Next.js for static site generation, Tailwind CSS for design efficiency, and TypeScript for reliability, with Turbopack accelerating build performance.",
+      "Next.js with Static Site Generation, Tailwind CSS, TypeScript, Advanced Custom Fields (ACF), and smooth animations.",
     problemSolving:
-      "Solved the challenge of integrating custom styling by decoupling frontend and backend, enabling effortless design changes through API-driven content.",
+      "Decoupled the frontend from WordPress to allow complete design freedom while keeping content management simple.",
     tech: ["Next.js", "WordPress", "Tailwind CSS", "TypeScript", "ACF", "Framer Motion"],
     link: "https://lls-two.vercel.app/",
     github: "https://github.com/stefangrobler155/lls",
@@ -24,15 +24,15 @@ export const projects = [
     image: "/projects/project2.jpg",
     fullImage: "/projects/project2-full.jpg",
     description:
-      "A headless WordPress-powered blog with a Next.js frontend, designed for scalability and smooth content delivery. The site combines clean design with optimized performance for a better reading experience.",
+      "A high-performance headless blog built with Next.js and WordPress. Clean design focused on great reading experience and fast content delivery.",
     aim:
-      "To build a high-performance blog platform that leverages headless WordPress for dynamic, API-driven publishing.",
+      "To create a scalable, fast-loading blog that is easy to manage and grows with the writer.",
     outcome:
-      "Created a blog that loads quickly, adapts seamlessly to all devices, and allows easy content management for long-term scalability.",
+      "Built a modern blog that offers excellent user experience on all devices with very fast load times and straightforward content updates.",
     expertise:
-      "Implemented static site generation with Next.js, styled layouts with Tailwind CSS, and integrated WordPress API for real-time content updates.",
+      "Next.js Static Generation, Tailwind CSS, WordPress REST API integration, and optimized pagination.",
     problemSolving:
-      "Handled pagination and large content sets by optimizing fetch calls, ensuring reliable performance as the blog scales.",
+      "Optimized data fetching and pagination to maintain excellent performance even with many blog posts.",
     tech: ["Next.js", "Tailwind CSS", "WordPress API", "Fetch API", "Framer Motion"],
     link: "https://bbblog-eight.vercel.app/",
     github: "https://github.com/stefangrobler155/bbblog",
@@ -43,15 +43,15 @@ export const projects = [
     image: "/projects/project3.jpg",
     fullImage: "/projects/project3-full.jpg",
     description:
-      "An e-commerce demo store built with React and a headless WordPress WooCommerce backend. It demonstrates a complete online shopping experience — from browsing products to checkout and digital downloads.",
+      "A modern headless e-commerce demo store using React + WordPress WooCommerce. Features smooth shopping experience and digital downloads.",
     aim:
-      "To showcase the potential of headless WooCommerce by building a decoupled storefront that highlights flexibility and modern UX.",
+      "To demonstrate the power and flexibility of a headless WooCommerce storefront with excellent user experience.",
     outcome:
-      "Launched a functional demo store with a smooth cart and checkout flow, capable of handling both physical and virtual products.",
+      "Created a fully functional store with smooth cart, checkout, and support for both physical and digital products.",
     expertise:
-      "Used React for state management, integrated WooCommerce REST API for dynamic product data, and ensured secure frontend–backend communication.",
+      "React state management, WooCommerce REST API integration, and clean, modern frontend architecture.",
     problemSolving:
-      "Solved synchronization issues between frontend and backend to maintain consistent cart and order flows, ensuring reliability for e-commerce use cases.",
+      "Resolved frontend-backend synchronization challenges to ensure reliable cart and order processing.",
     tech: ["React", "Headless WP", "WooCommerce", "REST API"],
     link: "https://download-store-gamma.vercel.app/",
     github: "https://github.com/stefangrobler155/download-store",
@@ -62,7 +62,14 @@ export const projects = [
     image: "/projects/project4.jpg",
     fullImage: "/projects/project4-full.jpg",
     description:
-      "An e-commerce demo store built with React and a headless WordPress WooCommerce backend. It demonstrates a complete online shopping experience — from browsing products to checkout and digital downloads.",
+      "A clean, professional website for Lezylrie French Bulldogs, a reputable South African breeder. Built to effectively showcase their dogs and attract potential puppy buyers.",
+    aim:
+      "To create an attractive, easy-to-navigate website that builds trust and helps the breeder generate more enquiries.",
+    outcome:
+      "Delivered a user-friendly site with beautiful dog photography that presents the breeder professionally and makes it simple for visitors to get in touch.",
+    expertise: "WordPress, Elementor, responsive design, and clear content structure.",
+    problemSolving:
+      "Focused on strong visual presentation and simple navigation to convert visitors into puppy enquiries.",
     tech: ["WordPress", "Elementor"],
     link: "https://lezylriefrenchbulldogs.co.za/",
   },
@@ -72,7 +79,14 @@ export const projects = [
     image: "/projects/project5.jpg",
     fullImage: "/projects/project5-full.jpg",
     description:
-      "Designed and developed a fully functional e-commerce website for Annie's Irises, a specialized Bearded Iris Nursery, using WordPress and WooCommerce. The website serves as an online storefront and informational hub, showcasing the nursery’s vibrant collection of bearded irises, facilitating online purchases, and engaging gardening enthusiasts with educational content.",
+      "A complete e-commerce website and online storefront for Annie's Irises, a specialized bearded iris nursery in Australia.",
+    aim:
+      "To build a reliable online store that showcases their iris collection beautifully and makes online ordering simple for gardening customers.",
+    outcome:
+      "Created a professional WooCommerce store with excellent product presentation, easy navigation, and a platform the owner can manage independently.",
+    expertise: "WordPress, WooCommerce, Elementor, e-commerce setup, and product photography integration.",
+    problemSolving:
+      "Designed the site to handle seasonal plant sales with clear information and a smooth purchasing process.",
     tech: ["WordPress", "WooCommerce", "Elementor"],
     link: "https://anniesirises.com.au/",
   },
