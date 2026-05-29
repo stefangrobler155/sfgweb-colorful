@@ -29,7 +29,15 @@ export default function Navbar() {
           className="text-2xl font-bold text-[var(--text-color)]"
         >
           <Link href="/">
-          <Image src="/logo.png" alt="SFGWeb Logo" width={60} height={60} className="inline-block mr-2" />
+          <Image 
+            src="/logo.png" 
+            alt="SFGWeb Logo" 
+            width={180} 
+            height={60} 
+            className="h-10 w-auto" 
+            loading="eager"
+            priority
+          />
           </Link>
         </motion.div>
 
