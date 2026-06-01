@@ -1,6 +1,5 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
@@ -11,16 +10,32 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" }, 
-    { name: "Portfolio", href: "/#portfolio" }, 
-    { name: "Contact", href: "/#contact" }, 
+    { name: "Services", href: "/#services" },
+    { name: "Recent Work", href: "/#portfolio" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Dynamically set navbar height
+  useEffect(() => {
+    const updateHeight = () => {
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        const height = navbar.offsetHeight;
+        document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   return (
     <nav className="fixed top-0 w-full bg-[var(--primary-color)] shadow-md z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -29,15 +44,15 @@ export default function Navbar() {
           className="text-2xl font-bold text-[var(--text-color)]"
         >
           <Link href="/">
-          <Image 
-            src="/logo.png" 
-            alt="SFGWeb Logo" 
-            width={180} 
-            height={60} 
-            className="h-10 w-auto" 
-            loading="eager"
-            priority
-          />
+            <Image
+              src="/logo.png"
+              alt="SFGWeb Logo"
+              width={140}
+              height={40}
+              className="h-10 w-auto"
+              loading="eager"
+              priority
+            />
           </Link>
         </motion.div>
 

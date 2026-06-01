@@ -6,7 +6,7 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <>
       <Hero />
       <ColorBlocks height="h-8" />
       <Services />
@@ -15,6 +15,6 @@ export default function Home() {
       <ColorBlocks height="h-8" />
       <Contact />
       <ColorBlocks height="h-8" />
-    </main>
+    </>
   );
 }

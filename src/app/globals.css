@@ -9,9 +9,28 @@
   --accent-color-4: #fdc2c8;
   --accent-color-5: #fcaa18;
   --text-color: #330e00;
+
+  --font-inter: var(--font-inter);
+  --font-manrope: var(--font-manrope);
+
+  --navbar-height: 80px;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 105px; 
+  scroll-padding-top: calc(var(--navbar-height) + 20px);
+}
+
+h1, h2, h3, .heading {
+  font-family: var(--font-manrope);
+}
+
+body, p, li, .body-text {
+  font-family: var(--font-inter);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 70px;   /* Smaller height on mobile if needed */
+  }
 }
