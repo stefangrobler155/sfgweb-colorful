@@ -3,6 +3,7 @@ import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
+import WhyMe from "@/components/WhyMe";
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
       <Hero />
       <ColorBlocks height="h-8" />
       <Services />
+      <ColorBlocks height="h-8" />
+      <WhyMe />
       <ColorBlocks height="h-8" />
       <Portfolio />
       <ColorBlocks height="h-8" />
