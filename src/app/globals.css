@@ -8,7 +8,8 @@
   --accent-color-3: #d4e3ea;
   --accent-color-4: #fdc2c8;
   --accent-color-5: #fcaa18;
-  --text-color: #330e00;
+  --text-color: hsl(16, 100%, 10%);
+  --text-color1: hsl(0, 0%, 25%);
 
   --font-inter: var(--font-inter);
   --font-manrope: var(--font-manrope);

@@ -47,8 +47,8 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="SFGWeb Logo"
-              width={140}
-              height={40}
+              width={180}
+              height={60}
               className="h-10 w-auto"
               loading="eager"
               priority

@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-[var(--navbar-height)] min-h-screen flex items-center bg-[var(--primary-color)] py-100 md:py-8">
+    <section className="pt-[var(--navbar-height)] min-h-[85vh] flex items-center bg-[var(--primary-color)] mb-8">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] xl:grid-cols-[62%_38%] gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] xl:grid-cols-[58%_42%] md:gap-16 lg:gap-8 xl:gap-12 items-center">
           
           {/* Left Column */}
           <div className="space-y-6 lg:space-y-8">
@@ -14,7 +14,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="uppercase tracking-[3px] text-sm font-semibold text-[var(--accent-color-1)]"
+              className="uppercase tracking-[1.5px] md:tracking-[4px] text-[11px] md:text-sm font-semibold text-[var(--accent-color-1)]"
             >
               CUSTOM WEBSITES • ECOMMERCE • REDESIGNS
             </motion.p>
@@ -23,7 +23,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] text-[var(--text-color)] font-manrope"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-[var(--text-color)] font-manrope"
             >
               Websites That Help You{" "}
               <span className="text-[var(--accent-color-1)]">Get More Customers</span>
@@ -64,7 +64,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative flex justify-center lg:justify-end pt-6 md:pt-0"
+            className="relative flex justify-center pt-6 md:pt-0"
           >
             <div className="relative w-full max-w-[380px] lg:max-w-[420px]">
               <Image
@@ -82,7 +82,7 @@ export default function Hero() {
                 transition={{ duration: 3.5, repeat: Infinity }}
                 className="hidden sm:block absolute -top-6 -right-6 bg-white dark:bg-[var(--accent-color-4)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
               >
-                ⚡ Blazing Fast
+                ⚡ 90+ Lighthouse Score
               </motion.div>
 
               <motion.div
@@ -90,7 +90,7 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
                 className="hidden sm:block absolute -bottom-6 -left-6 bg-white dark:bg-[var(--accent-color-3)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
               >
-                📱 Fully Responsive
+                📱 Mobile-First Design
               </motion.div>
             </div>
           </motion.div>
