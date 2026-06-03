@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--primary-color)] text-[var(--secondary-color)] py-8">
+    <footer className="bg-[var(--secondary-color)] text-[var(--text-light)] py-8">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,7 +12,7 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           className="mb-4"
         >
-          <h3 className="text-xl font-semibold text-[var(--accent-color-2)]">
+          <h3 className="text-xl font-semibold text-[var(--accent-color-1)]">
            sfgweb.co.za
           </h3>
           <p className="mt-1 text-sm text-[var(--text-color)]">

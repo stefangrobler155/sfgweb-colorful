@@ -27,8 +27,8 @@ const reasons = [
 
 export default function WhyMe() {
   return (
-    <section className="py-24 bg-[var(--primary-color)] text-[var(--text-color)]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
+    <section id="why-me" className="py-12 bg-[var(--secondary-color)] text-[var(--text-light)]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.p
@@ -56,7 +56,7 @@ export default function WhyMe() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mt-4 text-[var(--secondary-color)] text-lg max-w-2xl mx-auto"
+            className="mt-4 text-[var(--text-light)] text-lg max-w-2xl mx-auto"
           >
             I don’t just create websites — I create digital tools that attract clients and build trust.
           </motion.p>
@@ -71,7 +71,7 @@ export default function WhyMe() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-[var(--accent-color-1)]/30 transition-all duration-300 hover:-translate-y-1"
+              className="group bg-[var(--secondary-color)] backdrop-blur-sm border border-[var(--accent-color-1)] rounded-3xl p-8 hover:border-[var(--accent-color-5)] transition-all duration-300 hover:-translate-y-1"
             >
               <div className="text-[var(--accent-color-1)] mb-6 transition-transform group-hover:scale-110">
                 {reason.icon}
@@ -81,7 +81,7 @@ export default function WhyMe() {
                 {reason.title}
               </h3>
 
-              <p className="text-[var(--secondary-color)] leading-relaxed">
+              <p className="text-[var(--text-light)] leading-relaxed">
                 {reason.description}
               </p>
             </motion.div>

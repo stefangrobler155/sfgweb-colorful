@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-[var(--navbar-height)] min-h-[85vh] flex items-center bg-[var(--primary-color)] mb-8">
+    <section className="min-h-[85vh] flex items-center bg-[var(--secondary-color)] text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] xl:grid-cols-[58%_42%] md:gap-16 lg:gap-8 xl:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] xl:grid-cols-[58%_42%] md:gap-12 lg:gap-8 xl:gap-12 items-center">
           
           {/* Left Column */}
           <div className="space-y-6 lg:space-y-8">
@@ -23,7 +23,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-[var(--text-color)] font-manrope"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-[var(--text-light)] font-manrope"
             >
               Websites That Help You{" "}
               <span className="text-[var(--accent-color-1)]">Get More Customers</span>
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-base sm:text-lg md:text-xl text-[var(--secondary-color)] max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-[var(--text-light)] max-w-xl"
             >
               Professional, fast-loading websites built for small businesses, service providers, and online stores.
             </motion.p>
@@ -43,7 +43,7 @@ export default function Hero() {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-white font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all text-center"
+                className="bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-[var(--text-light)] font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all text-center"
               >
                 Get a Free Quote
               </motion.a>
@@ -52,7 +52,7 @@ export default function Hero() {
                 href="#portfolio"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="border border-[var(--accent-color-1)] text-[var(--text-color)] hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl transition-all text-center"
+                className="border border-[var(--accent-color-1)] text-[var(--text-light)] hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl transition-all text-center"
               >
                 View My Work
               </motion.a>
@@ -64,7 +64,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative flex justify-center pt-6 md:pt-0"
+            className="relative flex justify-start md:justify-center pt-6 md:pt-0 text-[var(--text-dark)]"
           >
             <div className="relative w-full max-w-[380px] lg:max-w-[420px]">
               <Image
@@ -80,7 +80,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity }}
-                className="hidden sm:block absolute -top-6 -right-6 bg-white dark:bg-[var(--accent-color-4)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
+                className="hidden sm:block absolute -top-6 -right-6 bg-[var(--accent-color-1)] text-[var(--text-light)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
               >
                 ⚡ 90+ Lighthouse Score
               </motion.div>
@@ -88,7 +88,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
-                className="hidden sm:block absolute -bottom-6 -left-6 bg-white dark:bg-[var(--accent-color-3)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
+                className="hidden sm:block absolute -bottom-6 -left-6 bg-[var(--accent-color-1)] text-[var(--text-light)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
               >
                 📱 Mobile-First Design
               </motion.div>

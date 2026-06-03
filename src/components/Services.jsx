@@ -43,25 +43,33 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-zinc-950 text-white">
+    <section id="services" className="py-12 bg-[var(--secondary-color)] text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
+                    <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="uppercase tracking-[3px] text-sm font-semibold text-[var(--accent-color-1)]"
+          >
+            Services
+          </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tight"
+            className="text-4xl md:text-5xl font-bold tracking-tight mt-3"
           >
             Services That <span className="text-[var(--accent-color-1)]">Drive Results</span>
           </motion.h2>
-          <p className="mt-4 text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg max-w-2xl mx-auto">
             I build high-performing websites that help businesses attract more clients and increase revenue.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -69,11 +77,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group flex flex-col bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-[var(--accent-color-1)]/30 transition-all duration-500 hover:-translate-y-2 h-full"
+              className="group flex flex-col bg-[var(--secondary-color)] border border-[var(--accent-color-1)] rounded-3xl p-10 hover:border-[var(--accent-color-5)] transition-all duration-500 hover:-translate-y-2 h-full"
             >
               {/* Top Content */}
               <div className="flex-1">
-                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.accent} mb-8 text-white`}>
+                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.accent} mb-8 text-[var(--text-light)]`}>
                   {service.icon}
                 </div>
 
@@ -85,8 +93,8 @@ export default function Services() {
                 {/* Features */}
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-3 text-zinc-300">
-                      <span className="text-purple-400 text-xl leading-none flex-shrink-0">•</span>
+                    <li key={i} className="flex items-center gap-3">
+                      <span className="text-[var(--accent-color-1)] text-xl leading-none flex-shrink-0">•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -94,10 +102,10 @@ export default function Services() {
               </div>
 
               {/* Bottom Link - Always at the same position */}
-              <div className="mt-auto pt-8 border-t border-zinc-800">
+              <div className="mt-auto pt-8 border-t border-[var(--primary-color)]">
                 <a
                   href="#contact"
-                  className="text-purple-400 hover:text-purple-300 font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300"
+                  className="text-[var(--accent-color-1)] hover:text-[var(--accent-color-5)] font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300"
                 >
                   Get a quote for this service →
                 </a>

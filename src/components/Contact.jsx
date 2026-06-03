@@ -43,7 +43,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <section id="contact" className="py-20 bg-[var(--secondary-color)] text-[var(--primary-color)]">
+    <section id="contact" className="py-10 bg-[var(--secondary-color)] text-[var(--text-light)]">
       <div className="max-w-6xl mx-auto px-6 text-center py-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -51,7 +51,7 @@ const handleSubmit = async (e) => {
           transition={{ duration: 0.8 }}
           className="text-4xl font-bold mb-12"
         >
-          Get in <span className="text-[var(--accent-color-2)]">Touch</span>
+          Get in <span className="text-[var(--accent-color-1)]">Touch</span>
         </motion.h2>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
           <input
@@ -60,7 +60,7 @@ const handleSubmit = async (e) => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Name"
-            className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)]"
+            className="w-full p-3 rounded-xl bg-[var(--primary-color)] text-[var(--text-dark)]"
             required
           />
           <input
@@ -69,7 +69,7 @@ const handleSubmit = async (e) => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email"
-            className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)]"
+            className="w-full p-3 rounded-xl bg-[var(--primary-color)] text-[var(--text-dark)]"
             required
           />
           <textarea
@@ -77,7 +77,7 @@ const handleSubmit = async (e) => {
             value={formData.message}
             onChange={handleChange}
             placeholder="Your Message"
-            className="w-full p-3 rounded-xl bg-[var(--accent-color-3)] text-[var(--text-color)] h-32"
+            className="w-full p-3 rounded-xl bg-[var(--primary-color)] text-[var(--text-dark)] h-32"
             required
           />
           <motion.button

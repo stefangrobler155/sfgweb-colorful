@@ -11,6 +11,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
+    { name: "Why Me", href: "/#why-me" },
     { name: "Recent Work", href: "/#portfolio" },
     { name: "Contact", href: "/#contact" },
   ];
@@ -34,18 +35,18 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-[var(--primary-color)] shadow-md z-50">
+    <nav className="fixed top-0 w-full bg-[var(--secondary-color)] shadow-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl font-bold text-[var(--text-color)]"
+          className="text-2xl font-bold text-[var(--text-light)]"
         >
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/logo_1.png"
               alt="SFGWeb Logo"
               width={180}
               height={60}
@@ -62,7 +63,7 @@ export default function Navbar() {
             <a
               key={i}
               href={item.href}
-              className="text-[var(--text-color)] hover:text-[var(--accent-color-1)] transition font-medium"
+              className="text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition font-medium"
             >
               {item.name}
             </a>
@@ -71,7 +72,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-[var(--text-color)] hover:text-[var(--accent-color-1)] transition"
+          className="md:hidden text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition"
           onClick={toggleMenu}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
@@ -87,14 +88,14 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[var(--primary-color)] border-t border-[var(--accent-color-3)]"
+            className="md:hidden bg-[var(--secondary-color)] border-t border-[var(--accent-color-3)]"
           >
             <div className="flex flex-col items-center py-4">
               {navItems.map((item, i) => (
                 <a
                   key={i}
                   href={item.href}
-                  className="py-2 text-[var(--text-color)] hover:text-[var(--accent-color-1)] transition font-medium"
+                  className="py-2 text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition font-medium"
                   onClick={toggleMenu}
                 >
                   {item.name}

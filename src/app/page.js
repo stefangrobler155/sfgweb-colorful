@@ -9,15 +9,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ColorBlocks height="h-8" />
+      {/* <ColorBlocks height="h-8" /> */}
       <Services />
-      <ColorBlocks height="h-8" />
+      {/* <ColorBlocks height="h-8" /> */}
       <WhyMe />
-      <ColorBlocks height="h-8" />
+      {/* <ColorBlocks height="h-8" /> */}
       <Portfolio />
-      <ColorBlocks height="h-8" />
+      {/* <ColorBlocks height="h-8" /> */}
       <Contact />
-      <ColorBlocks height="h-8" />
+      {/* <ColorBlocks height="h-8" /> */}
     </>
   );
 }
