@@ -25,10 +25,10 @@ const manrope = Manrope({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body className={`${inter.className} ${manrope.className} bg-[var(--primary-color)]`}> 
+    <html lang="en" className={`${inter.variable} ${manrope.variable} bg-[var(--secondary-color)]`}>
+      <body className={`${inter.className} ${manrope.className}`}> 
         <Navbar />
-        <main className="flex flex-col pt-16">
+        <main className="flex flex-col pt-24 md:pt-16">
           {children}
         </main>
         <Footer />
