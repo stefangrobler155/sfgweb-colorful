@@ -4,24 +4,28 @@ import { FaCheckCircle, FaClock, FaTrophy, FaHandshake } from "react-icons/fa";
 
 const reasons = [
   {
-    icon: <FaCheckCircle size={42} />,
+    icon: <FaCheckCircle size={48} />,
     title: "Results That Matter",
-    description: "Built to generate leads, increase trust, and support business growth.",
+    description: "Professional websites designed to help businesses establish a stronger online presence.",
+    accent: "from-blue-500 to-cyan-500",
   },
   {
-    icon: <FaClock size={42} />,
+    icon: <FaClock size={48} />,
     title: "Fast Turnaround",
     description: "Most projects are completed in 2–4 weeks with regular updates and clear communication.",
+    accent: "from-purple-500 to-pink-500",
   },
   {
-    icon: <FaTrophy size={42} />,
+    icon: <FaTrophy size={48} />,
     title: "Modern & High Performance",
     description: "Fast-loading websites optimized for speed, mobile devices, and search engines.",
+    accent: "from-amber-500 to-orange-500",
   },
   {
-    icon: <FaHandshake size={42} />,
+    icon: <FaHandshake size={48} />,
     title: "Personal Local Support",
     description: "Based in Free State, South Africa. Responsive, reliable, and easy to work with.",
+    accent: "from-emerald-500 to-teal-500",
   },
 ];
 
@@ -39,7 +43,6 @@ export default function WhyMe() {
           >
             WHY WORK WITH ME
           </motion.p>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +53,6 @@ export default function WhyMe() {
             Built to Help Your Business{" "}
             <span className="text-[var(--accent-color-1)]">Grow</span>
           </motion.h2>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,17 +73,17 @@ export default function WhyMe() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-[var(--secondary-color)] backdrop-blur-sm border border-[var(--accent-color-1)] rounded-3xl p-8 hover:border-[var(--accent-color-5)] transition-all duration-300 hover:-translate-y-1"
+              className="group bg-[var(--secondary-color)] border border-[var(--accent-color-1)] rounded-3xl p-8 hover:border-[var(--accent-color-5)] transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
             >
-              <div className="text-[var(--accent-color-1)] mb-6 transition-transform group-hover:scale-110">
+              {/* Icon with gradient background - matching Pricing style */}
+              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${reason.accent} mb-6 text-[var(--text-light)] w-fit transition-transform group-hover:scale-110`}>
                 {reason.icon}
               </div>
 
               <h3 className="text-2xl font-semibold mb-3 leading-tight">
                 {reason.title}
               </h3>
-
-              <p className="text-[var(--text-light)] leading-relaxed">
+              <p className="text-[var(--text-light)] leading-relaxed flex-1">
                 {reason.description}
               </p>
             </motion.div>

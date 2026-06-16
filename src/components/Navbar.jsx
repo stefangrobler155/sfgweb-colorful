@@ -12,7 +12,6 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
     { name: "Why Me", href: "/#why-me" },
-    { name: "Recent Work", href: "/#portfolio" },
     { name: "Contact", href: "/#contact" },
   ];
 
@@ -35,7 +34,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-[var(--secondary-color)] shadow-md z-50">
+    <nav className="fixed top-0 w-full bg-[var(--accent-color-1)] text-[var(--text-light)] shadow-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
@@ -63,7 +62,7 @@ export default function Navbar() {
             <a
               key={i}
               href={item.href}
-              className="text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition font-medium"
+              className="text-[var(--text-light)] hover:text-[var(--text-dark)] transition font-medium"
             >
               {item.name}
             </a>
@@ -72,7 +71,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition"
+          className="md:hidden text-[var(--text-light)] hover:text-[var(--text-dark)] transition"
           onClick={toggleMenu}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >

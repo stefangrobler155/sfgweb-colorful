@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex items-center bg-[var(--secondary-color)] text-[var(--text-light)]">
+    <section className="min-h-[85vh] flex items-center bg-[url('/bg_1.webp')] bg-cover bg-center bg-no-repeat bg-[var(--secondary-color)] text-[var(--text-light)]');">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] xl:grid-cols-[58%_42%] md:gap-12 lg:gap-8 xl:gap-12 items-center">
           
@@ -49,12 +49,12 @@ export default function Hero() {
               </motion.a>
 
               <motion.a
-                href="#portfolio"
+                href="#services"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="border border-[var(--accent-color-1)] text-[var(--text-light)] hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl transition-all text-center"
               >
-                View My Work
+                Services & Pricing
               </motion.a>
             </div>
           </div>
@@ -64,11 +64,11 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative flex justify-start md:justify-center pt-6 md:pt-0 text-[var(--text-dark)]"
+            className="relative flex justify-start md:justify-center pt-6 mb-8 md:pt-0 text-[var(--text-dark)]"
           >
             <div className="relative w-full max-w-[380px] lg:max-w-[420px]">
               <Image
-                src="/placeholder.png"
+                src="/hero_img.webp"
                 alt="Professional website example"
                 width={520}
                 height={580}
@@ -82,7 +82,7 @@ export default function Hero() {
                 transition={{ duration: 3.5, repeat: Infinity }}
                 className="hidden sm:block absolute -top-6 -right-6 bg-[var(--accent-color-1)] text-[var(--text-light)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
               >
-                ⚡ 90+ Lighthouse Score
+                ⚡ Lightning-Fast Websites
               </motion.div>
 
               <motion.div
@@ -90,7 +90,7 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
                 className="hidden sm:block absolute -bottom-6 -left-6 bg-[var(--accent-color-1)] text-[var(--text-light)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
               >
-                📱 Mobile-First Design
+                📱 Fully Responsive Design
               </motion.div>
             </div>
           </motion.div>
