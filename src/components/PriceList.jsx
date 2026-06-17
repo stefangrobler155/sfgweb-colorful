@@ -5,7 +5,7 @@ import { FaRocket, FaBuilding, FaCrown, FaShoppingCart } from "react-icons/fa";
 const packages = [
   {
     icon: <FaRocket size={48} />,
-    title: "Bronze",
+    title: "Starter",
     price: "R2,000",
     period: "Once-off",
     description: "Perfect for startups and personal brands needing a strong online presence.",
@@ -21,7 +21,7 @@ const packages = [
   },
   {
     icon: <FaBuilding size={48} />,
-    title: "Silver",
+    title: "Business",
     price: "R3,500",
     period: "Once-off",
     description: "Ideal for small businesses ready to attract more clients.",
@@ -38,7 +38,7 @@ const packages = [
   },
   {
     icon: <FaCrown size={48} />,
-    title: "Gold",
+    title: "Growth",
     price: "R7,500",
     period: "Once-off",
     description: "For established businesses wanting a premium online experience.",
@@ -55,7 +55,7 @@ const packages = [
   },
   {
     icon: <FaShoppingCart size={48} />,
-    title: "eCommerce",
+    title: "Online Store",
     price: "R8,000",
     period: "From",
     description: "Online stores built to sell and scale.",
@@ -166,7 +166,7 @@ export default function Pricing() {
 
               {/* Price */}
               <div className="mb-6">
-                <span className="text-5xl font-bold">{pkg.price}</span>
+                <span className="text-4xl font-bold">{pkg.price}</span>
                 <span className="text-zinc-400 ml-2">{pkg.period}</span>
               </div>
 

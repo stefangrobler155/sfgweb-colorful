@@ -43,9 +43,9 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-[var(--text-light)]"
         >
-          <Link href="/">
+          <Link href="/#home" className="flex items-center gap-2">
             <Image
-              src="/logo_1.png"
+              src="/sfgweb_1.png"
               alt="SFGWeb Logo"
               width={180}
               height={60}

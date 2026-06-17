@@ -21,8 +21,7 @@ export default function Footer() {
                 sfgweb.co.za
               </h3>
               <p className="text-[var(--text-color)] leading-relaxed max-w-md">
-                Professional Next.js + Headless WordPress developer based in the Free State, South Africa. 
-                I build fast, modern, and conversion-focused websites.
+                I build high-performing websites that help businesses attract more clients and increase revenue. Let's work together to create a website that drives results for your business.
               </p>
             </motion.div>
           </div>
@@ -53,7 +52,7 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-4 mt-6">
+            {/* <div className="flex gap-4 mt-6">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent-color-1)] transition-colors">
                 <FaLinkedin />
               </a>
@@ -63,7 +62,7 @@ export default function Footer() {
               <a href="https://wa.me/27812345678" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent-color-1)] transition-colors">
                 <FaWhatsapp />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -71,8 +70,6 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-[var(--accent-color-1)]/10 text-center text-xs text-[var(--text-color)]">
           <p>
             © {currentYear} sfgweb.co.za. All rights reserved. 
-            <span className="mx-2">•</span>
-            Built with Next.js + Headless WordPress
           </p>
         </div>
       </div>

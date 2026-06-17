@@ -66,7 +66,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative flex justify-start md:justify-center pt-6 mb-8 md:pt-0 text-[var(--text-dark)]"
           >
-            <div className="relative w-full max-w-[380px] lg:max-w-[420px]">
+            <div className="relative w-full max-w-100 lg:max-w-100">
               <Image
                 src="/hero_img.webp"
                 alt="Professional website example"

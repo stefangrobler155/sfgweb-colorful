@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ColorBlocks from "@/components/ColorBlocks";
 import { Inter, Manrope } from 'next/font/google';
 import "./globals.css";
 
@@ -26,7 +25,7 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body className={`${inter.className} ${manrope.className} min-h-screen bg-fixed bg-cover bg-center bg-no-repeat`}
+      <body id="home" className={`${inter.className} ${manrope.className} min-h-screen bg-fixed bg-cover bg-center bg-no-repeat`}
         style={{
           backgroundImage: "url('/bg_fixed.webp')",
           // Optional: Add dark overlay
@@ -37,7 +36,6 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
-        {/* <ColorBlocks /> */}
       </body>
     </html>
   );
