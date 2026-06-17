@@ -121,7 +121,7 @@ export default function Services() {
               className="group flex flex-col bg-[var(--secondary-color)] border border-[var(--accent-color-1)] rounded-3xl p-10 hover:border-[var(--accent-color-5)] transition-all duration-500 h-full"
             >
               {/* Icon */}
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.accent} mb-8 text-[var(--text-light)]`}>
+              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.accent} mb-8 text-[var(--text-light)] w-fit`}>
                 {service.icon}
               </div>
 
