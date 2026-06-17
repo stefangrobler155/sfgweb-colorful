@@ -6,7 +6,7 @@ const packages = [
   {
     icon: <FaRocket size={48} />,
     title: "Bronze",
-    price: "R1,950",
+    price: "R2,000",
     period: "Once-off",
     description: "Perfect for startups and personal brands needing a strong online presence.",
     features: [
@@ -22,7 +22,7 @@ const packages = [
   {
     icon: <FaBuilding size={48} />,
     title: "Silver",
-    price: "R3,750",
+    price: "R3,500",
     period: "Once-off",
     description: "Ideal for small businesses ready to attract more clients.",
     features: [
@@ -56,7 +56,7 @@ const packages = [
   {
     icon: <FaShoppingCart size={48} />,
     title: "eCommerce",
-    price: "R5,250",
+    price: "R8,000",
     period: "From",
     description: "Online stores built to sell and scale.",
     features: [
@@ -72,9 +72,33 @@ const packages = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 80, scale: 0.92 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1], // smooth & premium feel
+    },
+  },
+};
+
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-12 bg-[var(--secondary-color)] text-[var(--text-light)]">
+    <section id="pricing" className="py-12 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -86,29 +110,46 @@ export default function Pricing() {
           >
             Pricing
           </motion.p>
+          
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold tracking-tight mt-3"
           >
             Affordable Packages That <span className="text-[var(--accent-color-1)]">Drive Growth</span>
           </motion.h2>
-          <p className="mt-4 text-lg max-w-2xl mx-auto">
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-4 text-lg max-w-2xl mx-auto text-zinc-400"
+          >
             Transparent pricing with no hidden fees. All packages include Next.js performance and headless WordPress ease.
-          </p>
+          </motion.p>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {packages.map((pkg, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className={`group relative flex flex-col bg-[var(--secondary-color)] border border-[var(--accent-color-1)] rounded-3xl p-8 hover:border-[var(--accent-color-5)] transition-all duration-500 hover:-translate-y-2 h-full ${
+              variants={cardVariants}
+              whileHover={{
+                y: -12,
+                scale: 1.03,
+                transition: { duration: 0.35, ease: "easeOut" }
+              }}
+              className={`group relative flex flex-col bg-[var(--secondary-color)] border border-[var(--accent-color-1)] rounded-3xl p-8 hover:border-[var(--accent-color-5)] transition-all duration-500 h-full ${
                 pkg.popular ? "ring-2 ring-[var(--accent-color-1)]" : ""
               }`}
             >
@@ -155,7 +196,7 @@ export default function Pricing() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <p className="text-center text-zinc-400 mt-10 text-sm">
           Need something custom? <a href="#contact" className="text-[var(--accent-color-1)] hover:underline">Let’s discuss your project</a>

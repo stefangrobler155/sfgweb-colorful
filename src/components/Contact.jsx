@@ -12,8 +12,8 @@ const testimonials = [
       "Stefan took the time to understand my business and created a beautiful website that reflects my brand. He is always willing to make adjustments when needed. I recommend him to anyone looking for a website",
   },
   {
-    name: "Morgan Lee",
-    role: "Owner, Summit Home Repairs",
+    name: "Anna Erasmus",
+    role: "Owner, Annie's Irisses",
     quote:
       "The whole process was smooth from start to finish. Our site finally looks professional on mobile and customers can find what they need fast.",
   },
@@ -74,7 +74,7 @@ export default function Contact() {
   const testimonial = testimonials[activeTestimonial];
 
   return (
-    <section id="contact" className="py-10 bg-[var(--secondary-color)] text-[var(--text-light)]">
+    <section id="contact" className="py-10 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Header */}
         <div className="text-center mb-16">

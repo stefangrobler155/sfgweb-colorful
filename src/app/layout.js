@@ -25,8 +25,13 @@ const manrope = Manrope({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable} bg-[var(--secondary-color)]`}>
-      <body className={`${inter.className} ${manrope.className}`}> 
+    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+      <body className={`${inter.className} ${manrope.className} min-h-screen bg-fixed bg-cover bg-center bg-no-repeat`}
+        style={{
+          backgroundImage: "url('/bg_fixed.webp')",
+          // Optional: Add dark overlay
+          // backgroundImage: "linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('/bg_fixed.jpg')",
+        }}> 
         <Navbar />
         <main className="flex flex-col pt-24 md:pt-16">
           {children}

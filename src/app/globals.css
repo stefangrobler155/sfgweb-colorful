@@ -14,12 +14,12 @@
   --font-inter: var(--font-inter);
   --font-manrope: var(--font-manrope);
 
-  --navbar-height: 80px;
+  --navbar-height: 60px;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--navbar-height) + 20px);
+  scroll-padding-top: calc(var(--navbar-height));
 }
 
 h1, h2, h3, .heading {
