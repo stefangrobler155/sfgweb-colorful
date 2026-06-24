@@ -15,7 +15,7 @@ const testimonials = [
     name: "Anna Erasmus",
     role: "Owner, Annie's Irisses",
     quote:
-      "The whole process was smooth from start to finish. Our site finally looks professional on mobile and customers can find what they need fast.",
+      "The designer has created a website that effectively captures the charm and personality of Annie's Irises. The visual presentation aligns well with the gardening and horticulture market, using vibrant flower photography and a welcoming aesthetic that immediately communicates the brand's specialization in bearded irises.",
   },
 ];
 

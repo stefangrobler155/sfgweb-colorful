@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 
@@ -17,9 +18,19 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-[var(--accent-color-1)] mb-3">
-                sfgweb.co.za
-              </h3>
+            <Link href="/#home" className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 flex items-center justify-center text-white font-bold text-sm">
+                  <Image
+                        src="/sfg_clr-logo_1.svg"
+                        alt="SFGWeb Logo"
+                        width={180}
+                        height={60}
+                        className="h-10 w-auto"
+                        loading="eager"
+                        priority
+                      />
+              </div>
+            </Link>
               <p className="text-[var(--text-color)] leading-relaxed max-w-md">
                 I build high-performing websites that help businesses attract more clients and increase revenue. Let's work together to create a website that drives results for your business.
               </p>

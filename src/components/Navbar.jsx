@@ -11,6 +11,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
+    { name: "Pricing", href: "/#pricing" },
     { name: "Why Me", href: "/#why-me" },
     { name: "Contact", href: "/#contact" },
   ];
@@ -34,7 +35,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-[var(--accent-color-1)] text-[var(--text-light)] shadow-md z-50">
+    <nav className="fixed top-0 w-full bg-[var(--secondary-color)] text-[var(--text-light)] shadow-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
@@ -43,17 +44,19 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-[var(--text-light)]"
         >
-          <Link href="/#home" className="flex items-center gap-2">
-            <Image
-              src="/sfgweb_1.png"
-              alt="SFGWeb Logo"
-              width={180}
-              height={60}
-              className="h-10 w-auto"
-              loading="eager"
-              priority
-            />
-          </Link>
+        <Link href="/#home" className="flex items-center gap-2">
+          <div className="w-10 h-10 flex items-center justify-center text-white font-bold text-sm">
+              <Image
+                    src="/sfg_clr-logo_1.svg"
+                    alt="SFGWeb Logo"
+                    width={180}
+                    height={60}
+                    className="h-10 w-auto"
+                    loading="eager"
+                    priority
+                  />
+          </div>
+        </Link>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -62,7 +65,7 @@ export default function Navbar() {
             <a
               key={i}
               href={item.href}
-              className="text-[var(--text-light)] hover:text-[var(--text-dark)] transition font-medium"
+              className="text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition font-medium"
             >
               {item.name}
             </a>
@@ -71,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-[var(--text-light)] hover:text-[var(--text-dark)] transition"
+          className="md:hidden text-[var(--text-light)] hover:text-[var(--accent-color-1)] transition"
           onClick={toggleMenu}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >

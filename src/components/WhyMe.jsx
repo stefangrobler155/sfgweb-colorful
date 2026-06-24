@@ -6,28 +6,24 @@ const reasons = [
   {
     icon: <FaCheckCircle size={48} />,
     title: "Results That Matter",
-    // Changed: Tied it back to your main headline
     description: "Websites built to do more than just look good—designed to turn visitors into paying customers.",
     accent: "from-blue-500 to-cyan-500",
   },
   {
     icon: <FaClock size={48} />,
     title: "Fast Turnaround",
-    // Changed: Fixed the timeline contradiction!
     description: "Don't wait months. Most projects are designed, built, and launched in under 2 weeks.",
     accent: "from-purple-500 to-pink-500",
   },
   {
     icon: <FaTrophy size={48} />,
     title: "Modern & High Performance",
-    // Kept as is, it's perfect.
     description: "Fast-loading websites optimized for speed, mobile devices, and search engines.",
     accent: "from-amber-500 to-orange-500",
   },
   {
     icon: <FaHandshake size={48} />,
     title: "Personal Local Support",
-    // Kept as is, this is a HUGE selling point for SA clients.
     description: "Based in Free State, South Africa. Responsive, reliable, and easy to work with.",
     accent: "from-emerald-500 to-teal-500",
   },
@@ -90,7 +86,7 @@ export default function WhyMe() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-gray-400 text-lg max-w-2xl mx-auto" // Changed from var(--text-light) to gray-400
+            className="mt-4 text-gray-400 text-lg max-w-2xl mx-auto"
           >
             I don’t just create websites — I create digital tools that attract clients and build trust.
           </motion.p>
@@ -119,12 +115,9 @@ export default function WhyMe() {
               <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${reason.accent} mb-6 text-white w-fit transition-transform group-hover:scale-110`}>
                 {reason.icon}
               </div>
-
-              {/* Design Tweak: Made card headings white */}
               <h3 className="text-2xl font-semibold mb-3 leading-tight text-white">
                 {reason.title}
               </h3>
-              {/* Design Tweak: Made card body text slightly muted */}
               <p className="text-gray-400 leading-relaxed flex-1">
                 {reason.description}
               </p>
