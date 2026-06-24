@@ -5,70 +5,59 @@ import { FaRocket, FaBuilding, FaCrown, FaShoppingCart } from "react-icons/fa";
 const packages = [
   {
     icon: <FaRocket size={48} />,
-    title: "Starter",
+    title: "Startup Site",
     price: "R2,000",
     period: "Once-off",
     description: "Perfect for startups and personal brands needing a strong online presence.",
     features: [
       "1-Page Website (5 sections)",
       "Mobile & Tablet Responsive",
-      "WhatsApp + Contact Form",
-      "Free .co.za Domain",
-      "7 Days Delivery",
+      "WhatsApp Button + Contact Form",
+      "Fast Loading Performance",
+      "5-7 Days Delivery",
     ],
     accent: "from-blue-500 to-cyan-500",
     popular: false,
+    buttonText: "Get Started", // <-- New
+    // buttonLink: "/contact?package=startup" // <-- New
   },
   {
     icon: <FaBuilding size={48} />,
-    title: "Business",
+    title: "Business Site",
     price: "R3,500",
     period: "Once-off",
-    description: "Ideal for small businesses ready to attract more clients.",
+    description: "Ideal for established small businesses ready to attract more clients.",
     features: [
-      "5-Page Professional Website",
+      "Everything in Startup +",
+      "Up to 5 Professional Pages",
       "Blog Functionality",
-      "Basic SEO Setup",
-      "Easy WordPress Content Editing",
-      "Everything in Bronze +",
-      "7-8 Days Delivery",
+      "Basic On-Page SEO Setup",
+      "Easy WordPress Editing Guide",
+      "7-10 Days Delivery",
     ],
     accent: "from-purple-500 to-pink-500",
     popular: true,
-  },
-  {
-    icon: <FaCrown size={48} />,
-    title: "Growth",
-    price: "R7,500",
-    period: "Once-off",
-    description: "For established businesses wanting a premium online experience.",
-    features: [
-      "8-10 Page Website",
-      "Advanced SEO & Analytics",
-      "Newsletter Integration",
-      "Speed Optimisation",
-      "Everything in Silver +",
-      "10 Days Delivery",
-    ],
-    accent: "from-amber-500 to-orange-500",
-    popular: false,
+    buttonText: "Get in touch", 
+    // buttonLink: "/contact?package=business"
   },
   {
     icon: <FaShoppingCart size={48} />,
     title: "Online Store",
     price: "R8,000",
     period: "From",
-    description: "Online stores built to sell and scale.",
+    description: "E-commerce stores built to sell products and scale.",
     features: [
-      "5+ Page Online Store",
-      "Unlimited Products",
-      "Payment Gateway Integration",
-      "Advanced SEO",
-      "Client Training",
-      "Everything in Silver +",
+      "Everything in Business +",
+      "Up to 20 Products Loaded",
+      "Secure Payment Gateway (PayFast/Yoco)",
+      "Inventory & Shipping Setup",
+      "1-on-1 Client Training Session",
+      "10-14 Days Delivery",
     ],
     accent: "from-emerald-500 to-teal-500",
     popular: false,
+    buttonText: "Discuss My Store", 
+    // buttonLink: "/contact?package=store" 
   },
 ];
 
@@ -126,9 +115,9 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-lg max-w-2xl mx-auto text-zinc-400"
+            className="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
           >
-            Transparent pricing with no hidden fees. All packages include Next.js performance and headless WordPress ease.
+            Transparent pricing with no hidden fees. We take the hassle out of getting online, so you can focus on what you do best—running your business.
           </motion.p>
         </div>
 
@@ -138,7 +127,7 @@ export default function Pricing() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {packages.map((pkg, idx) => (
             <motion.div
@@ -191,13 +180,16 @@ export default function Pricing() {
                   href="#contact"
                   className="block w-full text-center bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 group-hover:scale-[1.02]"
                 >
-                  Get Quote
+                  {pkg.buttonText}
                 </a>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
+        
+        <p className="text-center text-sm text-gray-400 mt-8 max-w-2xl mx-auto">
+          * <span className="text-white font-medium">Note on Hosting & Domains:</span> To ensure you have 100% ownership of your digital assets, these prices cover the design and build only. You will be required to purchase your own domain name (~R100/year) and basic hosting (~R60/month) prior to development. We will provide a simple, step-by-step guide on exactly what to buy!
+        </p>
         <p className="text-center text-zinc-400 mt-10 text-sm">
           Need something custom? <a href="#contact" className="text-[var(--accent-color-1)] hover:underline">Let’s discuss your project</a>
         </p>

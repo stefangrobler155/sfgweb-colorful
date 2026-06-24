@@ -25,7 +25,7 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body id="home" className={`${inter.className} ${manrope.className} min-h-screen bg-fixed bg-cover bg-center bg-no-repeat`}
+      <body id="home" className={`${inter.className} ${manrope.className} min-h-screen bg-local md:bg-fixed bg-cover bg-center bg-no-repeat`}
         style={{
           backgroundImage: "url('/bg_fixed.webp')",
           // Optional: Add dark overlay
