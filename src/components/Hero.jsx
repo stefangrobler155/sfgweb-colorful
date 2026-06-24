@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex items-center text-[var(--text-light)]');">
+    <section className="min-h-[85vh] flex items-center text-[var(--text-light)]);">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] xl:grid-cols-[58%_42%] md:gap-12 lg:gap-8 xl:gap-12 items-center">
           
@@ -23,7 +23,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-[var(--text-light)] font-manrope"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-white font-manrope"
             >
               Websites That Help You{" "}
               <span className="text-[var(--accent-color-1)]">Get More Customers</span>
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="text-base sm:text-lg md:text-xl text-[var(--text-light)] max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl"
             >
               Professional, fast-loading websites built for small businesses, service providers, and online stores.
             </motion.p>
@@ -64,9 +64,9 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative flex justify-start md:justify-center pt-6 mb-8 md:pt-0 text-[var(--text-dark)]"
+            className="relative flex justify-start md:justify-center pt-6 mb-8 md:pt-0"
           >
-            <div className="relative w-full max-w-100 lg:max-w-100">
+            <div className="relative w-full max-w-lg">
               <Image
                 src="/hero_img.webp"
                 alt="Professional website example"
@@ -78,17 +78,17 @@ export default function Hero() {
 
               {/* Floating Badges */}
               <motion.div
-                animate={{ y: [0, -12, 0] }}
+                animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity }}
-                className="hidden sm:block absolute -top-6 -right-6 bg-[var(--accent-color-1)] text-[var(--text-light)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
+                className="hidden sm:block absolute -top-4 -right-4 bg-[var(--accent-color-1)] text-black rounded-2xl shadow-xl px-5 py-3 text-sm font-semibold whitespace-nowrap"
               >
                 ⚡ Lightning-Fast Websites
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, 12, 0] }}
+                animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
-                className="hidden sm:block absolute -bottom-6 -left-6 bg-[var(--accent-color-1)] text-[var(--text-light)] rounded-2xl shadow-xl px-5 py-3 text-sm font-medium whitespace-nowrap"
+                className="hidden sm:block absolute -bottom-4 -left-4 bg-[var(--secondary-color)] border border-[var(--accent-color-1)] text-white rounded-2xl shadow-xl px-5 py-3 text-sm font-semibold whitespace-nowrap backdrop-blur-sm"
               >
                 📱 Fully Responsive Design
               </motion.div>
