@@ -55,7 +55,7 @@ const cardVariants = {
 
 export default function WhyMe() {
   return (
-    <section id="why-me" className="py-12 bg-[var(--secondary-color)] text-[var(--text-light)]">
+    <section id="why-me" className="py-12 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
         <div className="text-center mb-16">

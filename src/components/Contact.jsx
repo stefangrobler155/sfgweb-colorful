@@ -74,7 +74,7 @@ export default function Contact() {
   const testimonial = testimonials[activeTestimonial];
 
   return (
-    <section id="contact" className="py-10 text-[var(--text-light)]">
+    <section id="contact" className="py-20 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Header */}
         <div className="text-center mb-16">
@@ -105,7 +105,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-[var(--secondary-color)] p-6 sm:p-8"
+            className="bg-[var(--secondary-color)] p-6 sm:p-8 rounded-3xl shadow-lg border border-[var(--accent-color-1)]"
           >
             <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -167,7 +167,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex min-h-[360px] flex-col justify-between overflow-hidden bg-[var(--secondary-color)] p-6 text-[var(--text-light)] sm:p-8"
+            className="flex min-h-[360px] flex-col justify-between overflow-hidden bg-[var(--secondary-color)] p-6 text-[var(--text-light)] sm:p-8 border border-[var(--accent-color-1)] rounded-3xl shadow-lg"
           >
             <div>
               <div className="mb-8 flex items-center justify-between gap-4">

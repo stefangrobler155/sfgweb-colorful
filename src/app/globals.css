@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-serif, system-ui, sans-serif;
+}
+
 :root {
   --primary-color: #fbfbfb;
   --secondary-color: #222222;
-  --accent-color-1: #fb923c; /* #ff4500 */
+  --accent-color-1: #fb923c;
   --accent-color-2: #c9ad03;
   --accent-color-3: #d4e3ea;
   --accent-color-4: #fdc2c8;
   --accent-color-5: #fcaa18;
   --text-dark: #330e00;
   --text-light: #fbfbfb;
-
-  --font-inter: var(--font-inter);
-  --font-manrope: var(--font-manrope);
-
   --navbar-height: 60px;
 }
 
@@ -22,16 +23,27 @@ html {
   scroll-padding-top: calc(var(--navbar-height));
 }
 
-h1, h2, h3, .heading {
-  font-family: var(--font-manrope);
-}
-
-body, p, li, .body-text {
-  font-family: var(--font-inter);
+/* Optional: Extend Tailwind with your custom colors */
+@theme {
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-accent-1: var(--accent-color-1);
+  /* etc. */
 }
 
 @media (max-width: 768px) {
   :root {
-    --navbar-height: 70px;   /* Smaller height on mobile if needed */
+    --navbar-height: 70px;
+  }
+}
+
+/* Base typography */
+@layer base {
+  body {
+    font-family: var(--font-inter);
+  }
+  
+  h1, h2, h3, .heading {
+    font-family: var(--font-manrope);
   }
 }
