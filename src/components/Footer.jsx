@@ -8,79 +8,85 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--secondary-color)] border-t border-[var(--accent-color-1)]/20 text-[var(--text-light)] pt-12 pb-8">
+    <footer className="bg-[var(--secondary-color)] border-t border-[var(--accent-color-1)]/20 text-[var(--text-light)] pt-16 pb-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-10">
           {/* Brand & Bio */}
           <div className="md:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-            <Link href="/#home" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 flex items-center justify-center text-white font-bold text-sm">
-                  <Image
-                        src="/sfg_clr-logo_1.svg"
-                        alt="SFGWeb Logo"
-                        width={180}
-                        height={60}
-                        className="h-10 w-auto"
-                        loading="eager"
-                        priority
-                      />
-              </div>
+            <Link href="/#home" className="inline-block mb-6">
+              <Image
+                src="/sfg_clr-logo_1.svg"
+                alt="SFGWeb Logo"
+                width={180}
+                height={60}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
-              <p className="text-[var(--text-color)] leading-relaxed max-w-md">
-                I build high-performing websites that help businesses attract more clients and increase revenue. Let's work together to create a website that drives results for your business.
-              </p>
-            </motion.div>
+            <p className="text-[var(--text-color)] leading-relaxed max-w-md">
+              I build fast, high-performing websites that help small businesses attract more clients and grow revenue.
+            </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-3">
-            <h4 className="font-semibold mb-4 text-[var(--accent-color-1)]">Quick Links</h4>
-            <ul className="space-y-2 text-[var(--text-color)]">
-              <li><Link href="/" className="hover:text-[var(--accent-color-1)] transition-colors">Home</Link></li>
+            <h4 className="font-semibold mb-5 text-[var(--accent-color-1)]">Quick Links</h4>
+            <ul className="space-y-3 text-[var(--text-color)]">
               <li><Link href="#services" className="hover:text-[var(--accent-color-1)] transition-colors">Services</Link></li>
               <li><Link href="#pricing" className="hover:text-[var(--accent-color-1)] transition-colors">Pricing</Link></li>
-              <li><Link href="#why-me" className="hover:text-[var(--accent-color-1)] transition-colors">Why Me</Link></li>
+              <li><Link href="#process" className="hover:text-[var(--accent-color-1)] transition-colors">Our Process</Link></li>
+              <li><Link href="#portfolio" className="hover:text-[var(--accent-color-1)] transition-colors">Portfolio</Link></li>
               <li><Link href="#contact" className="hover:text-[var(--accent-color-1)] transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Social & Legal */}
           <div className="md:col-span-4">
-            <h4 className="font-semibold mb-4 text-[var(--accent-color-1)]">Get In Touch</h4>
+            <h4 className="font-semibold mb-5 text-[var(--accent-color-1)]">Connect With Me</h4>
             
-            <div className="space-y-3 text-[var(--text-color)]">
-              <p>
-                Email: <a href="mailto:stefan@sfgweb.co.za" className="hover:text-[var(--accent-color-1)] transition-colors">stefan@sfgweb.co.za</a>
-              </p>
-              <p>
-                Phone: <a href="tel:+27812345678" className="hover:text-[var(--accent-color-1)] transition-colors">+27 81 234 5678</a>
-              </p>
-            </div>
-
-            {/* Social Icons */}
-            {/* <div className="flex gap-4 mt-6">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent-color-1)] transition-colors">
+            <div className="flex gap-5 text-3xl mb-10">
+              {/* <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[var(--accent-color-1)] transition-colors"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedin />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent-color-1)] transition-colors">
-                <FaGithub />
-              </a>
-              <a href="https://wa.me/27812345678" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-[var(--accent-color-1)] transition-colors">
+              </a> */}
+              <a 
+                href="https://wa.me/27768740744" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[var(--accent-color-1)] transition-colors"
+                aria-label="WhatsApp"
+              >
                 <FaWhatsapp />
               </a>
-            </div> */}
+              {/* <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[var(--accent-color-1)] transition-colors"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a> */}
+            </div>
+
+            <div className="text-sm text-[var(--text-color)]">
+              <p>Based in Free State, South Africa</p>
+              <p className="mt-1">Available for projects across South Africa</p>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-[var(--accent-color-1)]/10 text-center text-xs text-[var(--text-color)]">
+        <div className="mt-16 pt-8 border-t border-[var(--accent-color-1)]/10 text-center text-xs text-[var(--text-color)]">
           <p>
-            © {currentYear} sfgweb.co.za. All rights reserved. 
+            © {currentYear} SFGWeb. All rights reserved. 
+            <span className="mx-2">•</span>
+            Built with passion in South Africa
           </p>
         </div>
       </div>

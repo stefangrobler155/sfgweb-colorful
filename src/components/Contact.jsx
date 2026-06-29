@@ -151,8 +151,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm uppercase tracking-widest text-gray-400">Phone / WhatsApp</p>
-                  <a href="tel:0821234567" className="text-xl font-medium hover:text-[var(--accent-color-1)] transition-colors">
-                    082 123 4567
+                  <a href="tel:0768740744" className="text-xl font-medium hover:text-[var(--accent-color-1)] transition-colors">
+                    076 874 0744
                   </a>
                 </div>
               </div>
@@ -175,18 +175,18 @@ export default function Contact() {
             <div className="mt-12">
               <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">Follow Me</p>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
+                {/* <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
                   <FaWhatsapp />
-                </a>
+                </a> */}
                 <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
                   <FaFacebook />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
+                {/* <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
                   <FaInstagram />
-                </a>
-                <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
+                </a> */}
+                {/* <a href="#" className="w-12 h-12 rounded-2xl bg-[var(--accent-color-1)]/10 flex items-center justify-center text-2xl hover:bg-[var(--accent-color-1)] hover:text-white transition-all">
                   <FaLinkedin />
-                </a>
+                </a> */}
               </div>
             </div>
           </motion.div>
