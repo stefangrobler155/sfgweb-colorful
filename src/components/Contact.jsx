@@ -74,7 +74,7 @@ export default function Contact() {
   const testimonial = testimonials[activeTestimonial];
 
   return (
-    <section id="contact" className="py-12 text-[var(--text-light)]">
+    <section id="contact" className="pt-12 pb-24 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -148,7 +148,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 rounded-lg bg-[var(--accent-color-1)] text-white font-semibold w-full disabled:cursor-not-allowed disabled:opacity-70"
+                className="px-6 py-3 rounded-lg bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-white font-semibold w-full disabled:cursor-not-allowed disabled:opacity-70"
                 disabled={status === "sending"}
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
