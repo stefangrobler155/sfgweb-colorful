@@ -74,8 +74,8 @@ export default function Contact() {
   const testimonial = testimonials[activeTestimonial];
 
   return (
-    <section id="contact" className="py-20 text-[var(--text-light)]">
-      <div className="max-w-7xl mx-auto px-6 py-10">
+    <section id="contact" className="py-12 text-[var(--text-light)]">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.p
