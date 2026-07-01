@@ -9,7 +9,6 @@ export default function Contact() {
 
   const validateForm = (formData) => {
     const newErrors = {};
-
     if (!formData.get("name")?.trim()) newErrors.name = "Name is required";
     if (!formData.get("email") || !/\S+@\S+\.\S+/.test(formData.get("email"))) {
       newErrors.email = "Please enter a valid email";
@@ -17,20 +16,18 @@ export default function Contact() {
     if (!formData.get("phone")?.trim()) newErrors.phone = "Phone number is required";
     if (!formData.get("websiteType")) newErrors.websiteType = "Please select website type";
     if (!formData.get("goals")?.trim()) newErrors.goals = "Please tell us your goals";
-
     return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    
+   
     const validationErrors = validateForm(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-
     setErrors({});
     setStatus("sending");
 
@@ -39,9 +36,7 @@ export default function Contact() {
         method: "POST",
         body: formData,
       });
-
       const data = await response.json();
-
       if (data.success) {
         setStatus("success");
         e.target.reset();
@@ -123,21 +118,26 @@ export default function Contact() {
               <div>
                 <select
                   name="packageInterest"
-                  className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
+                  className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent 
+                             focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]
+                             appearance-none bg-no-repeat bg-right-4 pr-12 custom-select-arrow"
                 >
                   <option value="">Package Interested In (optional)</option>
-                  <option value="startup">Startup Site - R2,000</option>
-                  <option value="business">Business Site - R3,500</option>
-                  <option value="store">Online Store - From R8,000</option>
+                  <option value="startup">Startup Site - R4,000</option>
+                  <option value="business">Business Site - R7,000</option>
+                  <option value="store">Online Store - From R10,000</option>
                   <option value="custom">Custom Project</option>
                   <option value="notsure">Not Sure Yet</option>
                 </select>
               </div>
 
+              {/* Website Type */}
               <select
                 name="websiteType"
                 required
-                className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
+                className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent 
+                           focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]
+                           appearance-none bg-no-repeat bg-right-4 pr-12 custom-select-arrow"
               >
                 <option value="">What kind of website do you need?</option>
                 <option value="Brochure">Brochure / Business Site</option>
@@ -188,12 +188,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Call or WhatsApp</p>
-                  <a href="tel:+27812345678" className="text-lg hover:text-[var(--accent-color-1)] transition-colors">
-                    +27 81 234 5678
+                  <a href="tel:+27768740744" className="text-lg hover:text-[var(--accent-color-1)] transition-colors">
+                    +27 76 874 0744
                   </a>
                 </div>
               </div>
-
               <div className="flex gap-4">
                 <div className="text-3xl text-[var(--accent-color-1)] mt-1">
                   <FaEnvelope />
