@@ -6,14 +6,15 @@ const packages = [
   {
     icon: <FaRocket size={48} />,
     title: "Startup Site",
-    price: "R2,000",
+    price: "R4,000",
     period: "Once-off",
-    description: "Perfect for startups and personal brands needing a strong online presence.",
+    description: "Perfect for startups, freelancers, and small businesses that need a professional online presence without the cost of a full custom website.",
     features: [
-      "1-Page Website (5 sections)",
-      "Mobile & Tablet Responsive",
+      "1-page website (up to 5 sections: Hero, About, Services, Testimonials, Contact)",
+      "Mobile & Tablet Responsive Design",
       "WhatsApp Button + Contact Form",
       "Fast Loading Performance",
+      "Up to 2 Minor Revision Rounds",
       "5-7 Days Delivery",
     ],
     accent: "from-blue-500 to-cyan-500",
@@ -24,16 +25,18 @@ const packages = [
   {
     icon: <FaBuilding size={48} />,
     title: "Business Site",
-    price: "R3,500",
+    price: "R7,000",
     period: "Once-off",
-    description: "Ideal for established small businesses ready to attract more clients.",
+    description: "Ideal for growing businesses that need a professional website to build credibility and attract more qualified leads.",
     features: [
-      "Everything in Startup +",
       "Up to 5 Professional Pages",
+      "Mobile & Tablet Responsive Design",
+      "Contact Form + WhatsApp Integration",
       "Blog Functionality",
       "Basic On-Page SEO Setup",
-      "Easy WordPress Editing Guide",
-      "7-10 Days Delivery",
+      "WordPress Editing Guide Included",
+      "2 Revision Rounds Included",
+      "7–10 Business Day Delivery",
     ],
     accent: "from-purple-500 to-pink-500",
     popular: true,
@@ -43,17 +46,22 @@ const packages = [
   {
     icon: <FaShoppingCart size={48} />,
     title: "Online Store",
-    price: "R8,000",
+    price: "R10,000",
     period: "From",
-    description: "E-commerce stores built to sell products and scale.",
+    description: "Perfect for businesses ready to sell online with a secure, scalable e-commerce store built for smooth customer checkout and future growth.",
     features: [
-      "Everything in Business +",
       "Up to 20 Products Loaded",
-      "Secure Payment Gateway (PayFast/Yoco)",
+      "Mobile & Tablet Responsive",
+      "Secure Payment Gateway Integration (PayFast / Yoco)",
       "Inventory & Shipping Setup",
-      "1-on-1 Client Training Session",
-      "10-14 Days Delivery",
+      "Cart & Checkout Configuration",
+      "Basic On-Page SEO Setup",
+      "Fast Loading Performance",
+      "1-on-1 Training Session Included",
+      "2 Revision Rounds Included",
+      "10–14 Business Day Delivery",
     ],
+    note: "Final pricing depends on product count, product variations, shipping rules, and custom functionality.",
     accent: "from-emerald-500 to-teal-500",
     popular: false,
     buttonText: "Discuss My Store", 
@@ -173,7 +181,9 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-
+                {pkg.note && (
+                  <p className="text-sm text-zinc-400 mb-6">{pkg.note}</p>
+                ) }
               {/* CTA */}
               <div className="mt-auto pt-6 border-t border-[var(--primary-color)]">
                 <a
@@ -188,7 +198,8 @@ export default function Pricing() {
         </motion.div>
         
         <p className="text-center text-sm text-gray-400 mt-8 max-w-2xl mx-auto">
-          * <span className="text-white font-medium">Note on Hosting & Domains:</span> To ensure you have 100% ownership of your digital assets, these prices cover the design and build only. You will be required to purchase your own domain name (~R100/year) and basic hosting (~R60/month) prior to development. We will provide a simple, step-by-step guide on exactly what to buy!
+          * <span className="text-white font-medium">Hosting & Domain Not Included:</span> To ensure full ownership of your website, clients purchase their own domain and hosting. We provide a simple step-by-step guide on exactly what to buy and help you get set up.
+
         </p>
         <p className="text-center text-zinc-400 mt-10 text-sm">
           Need something custom? <a href="#contact" className="text-[var(--accent-color-1)] hover:underline">Let’s discuss your project</a>

@@ -101,10 +101,10 @@ export default function Navbar() {
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={`font-medium transition-colors relative py-1 group cursor-pointer
-                ${activeSection === item.id ? "text-[var(--accent-color-5)]" : "text-white hover:text-[var(--accent-color-4)]"}`}
+                ${activeSection === item.id ? "text-[var(--accent-color-5)]" : "text-white hover:text-[var(--accent-color-2)]"}`}
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[var(--accent-color-4)] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[var(--accent-color-2)] transition-all duration-300 group-hover:w-full" />
               {activeSection === item.id && (
                 <motion.span layoutId="active-underline" className="absolute -bottom-1 left-0 h-0.5 w-full bg-[var(--accent-color-5)]" />
               )}

@@ -6,17 +6,24 @@ const projects = [
   {
     title: "Lezylrie French Bulldogs",
     category: "Local Business / WordPress",
-    image: "/lfbd.webp", 
+    image: "/lfbd.webp",
     url: "https://lezylriefrenchbulldogs.co.za/",
     description: "Built a clean, modern website for a local French Bulldog breeder. Includes puppy gallery, availability, FAQs, and contact forms. The client was very happy with the result and the ongoing support."
   },
   {
     title: "Annie's Irises",
     category: "E-Commerce / WooCommerce",
-    image: "/annie.webp", 
+    image: "/annie.webp",
     url: "https://anniesirises.com.au/",
     description: "Designed and developed an online store for a specialist bearded iris nursery. Features product catalogue, seasonal sales, important biosecurity notices, and a beautiful plant-focused design."
-  }
+  },
+  {
+  title: "Lumina Lens Studio",
+  category: "Custom Photography Website",
+  image: "/project1.webp",
+  url: "https://lls-two.vercel.app/",
+  description: "Modern, visually rich website for Lumina Lens Studio. Includes seamless navigation, service showcases, and a streamlined booking inquiry process — all fully manageable by the client themselves."
+}
 ];
 
 const containerVariants = {
@@ -66,20 +73,20 @@ export default function RecentWork() {
           </motion.p>
         </div>
 
-        {/* Grid */}
+        {/* Grid - Updated to 3 columns on larger screens */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, idx) => (
             <motion.a
               key={idx}
               href={project.url}
-              target="_blank" // Opens in a new tab
-              rel="noopener noreferrer" // Security best practice for external links
+              target="_blank"
+              rel="noopener noreferrer"
               variants={cardVariants}
               whileHover={{ y: -8 }}
               className="group bg-[var(--secondary-color)] rounded-3xl overflow-hidden border border-[var(--accent-color-1)] hover:border-[var(--accent-color-5)] transition-all duration-500 block"
@@ -92,9 +99,9 @@ export default function RecentWork() {
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
+                  priority={idx === 0} // Prioritize first image
                 />
-                {/* The overlay effect - ONLY because these are real links */}
+                {/* Overlay effect */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 flex items-center justify-center">
                   <span className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-2 border-white px-6 py-2 rounded-full">
                     View Live Site ↗
