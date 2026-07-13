@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link href="/#home" className="inline-block mb-6">
               <Image
-                src="/sfg_clr-logo_1.svg"
+                src="/logo.png"
                 alt="SFGWeb Logo"
                 width={180}
                 height={60}

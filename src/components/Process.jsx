@@ -14,7 +14,7 @@ const steps = [
     step: "02",
     icon: <FaFileAlt size={28} />,
     title: "Content & Foundation",
-    description: "You provide the main content, photos, and logo (or we can arrange copywriting). You also secure your domain & hosting — I send a simple step-by-step guide.",
+    description: "You provide the main content, photos, and logo. You also secure your domain & hosting — I send a simple step-by-step guide.",
     accent: "from-purple-500 to-pink-500",
   },
   {
@@ -28,7 +28,7 @@ const steps = [
     step: "04",
     icon: <FaRocket size={28} />,
     title: "Launch & Handover",
-    description: "After final approval, we launch your new website. I provide all login details and a simple training video so you can update content yourself.",
+    description: "After final approval, we launch your new website. I provide all login details and a simple training session so you can update content yourself.",
     accent: "from-emerald-500 to-teal-500",
   },
 ];
