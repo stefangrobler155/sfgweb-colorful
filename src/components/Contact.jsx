@@ -6,6 +6,7 @@ import { FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
+  const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS;
 
   const validateForm = (formData) => {
     const newErrors = {};
@@ -69,7 +70,7 @@ export default function Contact() {
           {/* Form Column */}
           <div className="bg-[var(--secondary-color)] p-8 md:p-12 rounded-3xl border border-[var(--accent-color-1)]">
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              <input type="hidden" name="access_key" value="43383d08-ce17-4a8d-afcc-9824621f215b" />
+              <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
               <input type="hidden" name="subject" value="New Website Inquiry from sfgweb.co.za" />
               <input type="hidden" name="from_name" value="SFGWeb Contact Form" />
 
