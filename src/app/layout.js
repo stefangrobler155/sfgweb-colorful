@@ -4,8 +4,14 @@ import { Inter, Manrope } from 'next/font/google';
 import "./globals.css";
 
 export const metadata = {
-  title: "SFGWEB",
-  description: "Web Development",
+  title: "SFGWeb | Professional Websites for Small Businesses in South Africa",
+  description: "Fast, modern websites built for small businesses, service providers & online stores. Based in Free State. Get more customers with a professional website.",
+  keywords: ["web design south africa", "website designer free state", "wordpress developer", "ecommerce website"],
+  openGraph: {
+    title: "SFGWeb - Professional Websites",
+    description: "We build fast, high-converting websites that help businesses grow.",
+    images: [{ url: "/logo_icon.png" }],
+  },
 };
 
 const inter = Inter({
