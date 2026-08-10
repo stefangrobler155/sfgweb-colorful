@@ -79,21 +79,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-[var(--secondary-color)]/95 text-[var(--text-light)] shadow-lg backdrop-blur-md z-50 border-b border-white/10">
+    <nav className="fixed top-0 w-full bg-[var(--secondary-color)] text-[var(--text-light)] shadow-lg backdrop-blur-md z-50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="#home" className="flex items-center gap-3 group" onClick={(e) => handleNavClick(e, "#home")}>
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/sfg_300.png"
               alt="SFGWEB Logo"
               width={160}
-              height={50}
+              height={60}
               className="h-10 w-auto transition-transform group-hover:scale-105"
               priority
             />
-            {/* <h3 className="text-[var(--text-light)] text-sm md:text-xl font-semibold tracking-wide transition-transform group-hover:scale-105">
+            <h3 className="text-[var(--text-light)] text-sm md:text-xl font-semibold tracking-wide transition-transform group-hover:scale-105">
               SFGWEB
-            </h3> */}
+            </h3>
           </motion.div>
         </Link>
 
@@ -130,7 +130,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col py-6 px-6 space-y-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
@@ -138,7 +138,7 @@ export default function Navbar() {
                     ${activeSection === item.id ? "text-[var(--accent-color-1)] bg-white/10" : "hover:bg-white/10"}`}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>

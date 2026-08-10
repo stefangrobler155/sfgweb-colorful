@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
+  const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS;
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
-  const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS;
+  
 
   const validateForm = (formData) => {
     const newErrors = {};

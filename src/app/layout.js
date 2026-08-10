@@ -1,9 +1,10 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import { Inter, Manrope } from 'next/font/google';
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL('https://sfgweb.co.za'),
+
   title: "SFGWeb | Professional Websites for Small Businesses in South Africa",
   description: "Fast, modern websites built for small businesses, service providers & online stores. Based in Free State. Get more customers with a professional website.",
   keywords: ["web design south africa", "website designer free state", "wordpress developer", "ecommerce website"],
@@ -33,15 +34,11 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body 
+      <body
         className="font-sans antialiased min-h-screen bg-local md:bg-fixed bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/bg_fixed.webp')" }}
       >
-        <Navbar />
-        <main className="flex flex-col pt-24 md:pt-16">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
