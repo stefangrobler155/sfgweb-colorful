@@ -8,22 +8,33 @@ const projects = [
     category: "Local Business / WordPress",
     image: "/lfbd.webp",
     url: "https://lezylriefrenchbulldogs.co.za/",
-    description: "Built a clean, modern website for a local French Bulldog breeder. Includes puppy gallery, availability, FAQs, and contact forms. The client was very happy with the result and the ongoing support."
+    description:
+      "Original clean and modern website for a local French Bulldog breeder. Included puppy gallery, availability info, FAQs, and contact forms with ongoing support."
+  },
+  {
+    title: "Lezylrie French Bulldogs",
+    category: "Website Redesign",
+    image: "/lfb_redesign.webp",
+    url: "https://stefangrobler155-lezylrie-french-bu.vercel.app/",
+    description:
+      "Complete redesign into a warm, premium brand experience. Features a polished puppy availability section, adult dog gallery, storytelling journey, testimonials, and stronger conversion-focused layout."
   },
   {
     title: "Annie's Irises",
     category: "E-Commerce / WooCommerce",
     image: "/annie.webp",
     url: "https://anniesirises.com.au/",
-    description: "Designed and developed an online store for a specialist bearded iris nursery. Features product catalogue, seasonal sales, important biosecurity notices, and a beautiful plant-focused design."
+    description:
+      "Designed and developed an online store for a specialist bearded iris nursery. Features product catalogue, seasonal sales, important biosecurity notices, and a beautiful plant-focused design."
   },
   {
-  title: "Lumina Lens Studio",
-  category: "Custom Photography Website",
-  image: "/project1.webp",
-  url: "https://lls-two.vercel.app/",
-  description: "Modern, visually rich website for Lumina Lens Studio. Includes seamless navigation, service showcases, and a streamlined booking inquiry process — all fully manageable by the client themselves."
-}
+    title: "Lumina Lens Studio",
+    category: "Custom Photography Website",
+    image: "/project1.webp",
+    url: "https://lls-two.vercel.app/",
+    description:
+      "Modern, visually rich website for Lumina Lens Studio. Includes seamless navigation, service showcases, and a streamlined booking inquiry process — all fully manageable by the client themselves."
+  }
 ];
 
 const containerVariants = {
