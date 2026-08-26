@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SFGWeb
 
-## Getting Started
+Marketing site for [sfgweb.co.za](https://sfgweb.co.za) — custom websites, e-commerce stores, and redesigns for small businesses in South Africa.
 
-First, run the development server:
+Built with Next.js (App Router), Tailwind CSS v4, and Framer Motion.
+
+## What’s in the project
+
+- **Homepage** — hero, services, pricing, process, portfolio, testimonials, and contact form
+- **Project enquiry form** — `/project-enquiry-form` (4-step intake, not indexed)
+- **Thank-you page** — `/thank-you` after a successful enquiry
+
+Contact and enquiry forms submit through [Web3Forms](https://web3forms.com).
+
+## Getting started
+
+```bash
+npm install
+cp .env.example .env.local
+```
+
+Add your Web3Forms access key to `.env.local`:
+
+```
+NEXT_PUBLIC_WEB3FORMS=your_access_key
+```
+
+Then start the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Development server (Turbopack) |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/                 # App Router layouts, pages, sitemap, robots
+  components/          # UI sections and shared pieces
+    forms/             # Enquiry form + field helpers
+  lib/
+    site.js            # Contact details, nav, packages, copy
+    motion.js          # Shared Framer Motion variants
+    web3forms.js       # Form submit helper
+public/                # Images and static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Site copy, packages, portfolio items, and contact details live in `src/lib/site.js` so they are not duplicated across components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment
 
-## Deploy on Vercel
+| Variable | Used for |
+| --- | --- |
+| `NEXT_PUBLIC_WEB3FORMS` | Web3Forms access key for contact + enquiry forms |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Do not commit `.env.local`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+The site is set up for Vercel (`npm run build` / `npm start`). Set `NEXT_PUBLIC_WEB3FORMS` in the hosting environment.
+
+`server.js` is an optional custom Node server if a host needs `PORT` binding instead of `next start`.

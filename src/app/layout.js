@@ -1,13 +1,18 @@
-
-import { Inter, Manrope } from 'next/font/google';
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { SITE } from "@/lib/site";
 
 export const metadata = {
-  metadataBase: new URL('https://sfgweb.co.za'),
-
+  metadataBase: new URL(SITE.url),
   title: "SFGWeb | Professional Websites for Small Businesses in South Africa",
-  description: "Fast, modern websites built for small businesses, service providers & online stores. Based in Free State. Get more customers with a professional website.",
-  keywords: ["web design south africa", "website designer free state", "wordpress developer", "ecommerce website"],
+  description:
+    "Fast, modern websites built for small businesses, service providers & online stores. Based in Free State. Get more customers with a professional website.",
+  keywords: [
+    "web design south africa",
+    "website designer free state",
+    "wordpress developer",
+    "ecommerce website",
+  ],
   openGraph: {
     title: "SFGWeb - Professional Websites",
     description: "We build fast, high-converting websites that help businesses grow.",
@@ -16,19 +21,15 @@ export const metadata = {
 };
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  preload: true,           // Explicit is better
-  adjustFontFallback: true,
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
 });
 
 export default function RootLayout({ children }) {
