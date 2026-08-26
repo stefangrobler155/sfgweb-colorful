@@ -3,6 +3,13 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-manrope), ui-serif, system-ui, sans-serif;
+  --color-primary: #fbfbfb;
+  --color-secondary: #231f20;
+  --color-accent-1: #fb923c;
+  --color-accent-2: #c9ad03;
+  --color-accent-3: #d4e3ea;
+  --color-accent-4: #fdc2c8;
+  --color-accent-5: #fcaa18;
 }
 
 :root {
@@ -20,15 +27,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--navbar-height));
-}
-
-/* Optional: Extend Tailwind with your custom colors */
-@theme {
-  --color-primary: var(--primary-color);
-  --color-secondary: var(--secondary-color);
-  --color-accent-1: var(--accent-color-1);
-  /* etc. */
+  scroll-padding-top: var(--navbar-height);
 }
 
 @media (max-width: 768px) {
@@ -37,17 +36,16 @@ html {
   }
 }
 
-/* Base typography */
 @layer base {
   body {
     font-family: var(--font-inter);
   }
-  
+
   h1, h2, h3, .heading {
     font-family: var(--font-manrope);
   }
 }
-/* Custom Dropdown Arrow - Accent Color */
+
 .custom-select-arrow {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23fb923c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
   background-position: right 1rem center;
@@ -55,11 +53,7 @@ html {
   background-repeat: no-repeat;
 }
 
+.custom-select-arrow:hover,
 .custom-select-arrow:focus {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23fb923c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
-}
-
-/* Optional: Darker arrow on hover */
-.custom-select-arrow:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23fcaa18' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
 }

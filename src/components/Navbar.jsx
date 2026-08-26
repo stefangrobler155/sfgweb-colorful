@@ -1,54 +1,32 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { NAV_ITEMS, SITE } from "@/lib/site";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const navItems = [
-    { name: "Home", href: "#home", id: "home" },
-    { name: "Services", href: "#services", id: "services" },
-    { name: "Pricing", href: "#pricing", id: "pricing" },
-    { name: "Process", href: "#process", id: "process" },
-    { name: "Recent Work", href: "#recent-work", id: "recent-work" },
-    { name: "Contact", href: "#contact", id: "contact" },
-  ];
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  // Improved Scroll Handler with delay for mobile
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
-
-    // Close menu first
     setIsOpen(false);
 
-    if (element) {
-      // Small delay to let menu close
-      setTimeout(() => {
-        const navbarHeight = document.querySelector("nav")?.offsetHeight || 80;
-        const offset = navbarHeight - 10; // Adjust for some spacing
+    if (!element) return;
 
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-
-        setActiveSection(targetId);
-      }, 350); // 350ms delay
-    }
+    setTimeout(() => {
+      const navbarHeight = document.querySelector("nav")?.offsetHeight || 80;
+      const offsetPosition = element.getBoundingClientRect().top + window.scrollY - (navbarHeight - 10);
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      setActiveSection(targetId);
+    }, 350);
   };
 
-  // Scroll Spy
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -70,7 +48,7 @@ export default function Navbar() {
       { rootMargin: "-90px 0px -45% 0px", threshold: [0.1, 0.4, 0.6] }
     );
 
-    navItems.forEach((item) => {
+    NAV_ITEMS.forEach((item) => {
       const section = document.getElementById(item.id);
       if (section) observer.observe(section);
     });
@@ -85,26 +63,29 @@ export default function Navbar() {
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="flex items-center gap-3">
             <Image
               src="/sfg_300.png"
-              alt="SFGWEB Logo"
+              alt={`${SITE.name} Logo`}
               width={160}
               height={60}
               className="h-10 w-auto transition-transform group-hover:scale-105"
               priority
             />
             <h3 className="text-[var(--text-light)] text-sm md:text-xl font-semibold tracking-wide transition-transform group-hover:scale-105">
-              SFGWEB
+              {SITE.brand}
             </h3>
           </motion.div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <Link
-              key={item.name}
+              key={item.id}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className={`font-medium transition-colors relative py-1 group cursor-pointer
-                ${activeSection === item.id ? "text-[var(--accent-color-5)]" : "text-white hover:text-[var(--accent-color-2)]"}`}
+              className={`font-medium transition-colors relative py-1 group cursor-pointer ${
+                activeSection === item.id
+                  ? "text-[var(--accent-color-5)]"
+                  : "text-white hover:text-[var(--accent-color-2)]"
+              }`}
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[var(--accent-color-2)] transition-all duration-300 group-hover:w-full" />
@@ -115,7 +96,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        <button className="md:hidden text-2xl p-2 hover:text-[var(--accent-color-1)] transition" onClick={toggleMenu}>
+        <button
+          type="button"
+          className="md:hidden text-2xl p-2 hover:text-[var(--accent-color-1)] transition"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
@@ -129,13 +115,16 @@ export default function Navbar() {
             className="md:hidden bg-[var(--secondary-color)] border-t border-white/10"
           >
             <div className="flex flex-col py-6 px-6 space-y-1">
-              {navItems.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.id}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`py-4 px-4 text-lg font-medium rounded-lg transition-all
-                    ${activeSection === item.id ? "text-[var(--accent-color-1)] bg-white/10" : "hover:bg-white/10"}`}
+                  className={`py-4 px-4 text-lg font-medium rounded-lg transition-all ${
+                    activeSection === item.id
+                      ? "text-[var(--accent-color-1)] bg-white/10"
+                      : "hover:bg-white/10"
+                  }`}
                 >
                   {item.name}
                 </Link>

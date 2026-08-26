@@ -1,48 +1,47 @@
 "use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
+import { SITE, CONTACT_WEBSITE_TYPES, PACKAGES } from "@/lib/site";
+import { getWeb3FormsKey, submitWeb3Form } from "@/lib/web3forms";
+import { Field, contactInputClass, selectArrowClass } from "@/components/forms/Field";
 
 export default function Contact() {
-  const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS;
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
-  
 
   const validateForm = (formData) => {
-    const newErrors = {};
-    if (!formData.get("name")?.trim()) newErrors.name = "Name is required";
+    const nextErrors = {};
+    if (!formData.get("name")?.trim()) nextErrors.name = "Name is required";
     if (!formData.get("email") || !/\S+@\S+\.\S+/.test(formData.get("email"))) {
-      newErrors.email = "Please enter a valid email";
+      nextErrors.email = "Please enter a valid email";
     }
-    if (!formData.get("phone")?.trim()) newErrors.phone = "Phone number is required";
-    if (!formData.get("websiteType")) newErrors.websiteType = "Please select website type";
-    if (!formData.get("goals")?.trim()) newErrors.goals = "Please tell us your goals";
-    return newErrors;
+    if (!formData.get("phone")?.trim()) nextErrors.phone = "Phone number is required";
+    if (!formData.get("websiteType")) nextErrors.websiteType = "Please select website type";
+    if (!formData.get("goals")?.trim()) nextErrors.goals = "Please tell us your goals";
+    return nextErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-   
     const validationErrors = validateForm(formData);
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
+
     setErrors({});
     setStatus("sending");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await submitWeb3Form(formData);
       const data = await response.json();
       if (data.success) {
         setStatus("success");
         e.target.reset();
-        setErrors({});
       } else {
         setStatus("error");
       }
@@ -68,103 +67,64 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
-          {/* Form Column */}
           <div className="bg-[var(--secondary-color)] p-8 md:p-12 rounded-3xl border border-[var(--accent-color-1)]">
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-              <input type="hidden" name="subject" value="New Website Inquiry from sfgweb.co.za" />
-              <input type="hidden" name="from_name" value="SFGWeb Contact Form" />
+              <input type="hidden" name="access_key" value={getWeb3FormsKey()} />
+              <input type="hidden" name="subject" value={`New Website Inquiry from ${SITE.url.replace("https://", "")}`} />
+              <input type="hidden" name="from_name" value={`${SITE.name} Contact Form`} />
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Full Name"
-                    required
-                    className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
-                  />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    required
-                    className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
-                  />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                </div>
+                <Field error={errors.name}>
+                  <input type="text" name="name" placeholder="Your Full Name" required className={contactInputClass} />
+                </Field>
+                <Field error={errors.email}>
+                  <input type="email" name="email" placeholder="Email Address" required className={contactInputClass} />
+                </Field>
               </div>
 
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone / WhatsApp Number"
-                  required
-                  className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
-                />
-                {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-              </div>
+              <Field error={errors.phone}>
+                <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required className={contactInputClass} />
+              </Field>
 
-              <input
-                type="text"
-                name="business"
-                placeholder="Business Name"
-                className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
-              />
+              <input type="text" name="business" placeholder="Business Name" className={contactInputClass} />
 
-              {/* Package Interest */}
-              <div>
-                <select
-                  name="packageInterest"
-                  className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent 
-                             focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]
-                             appearance-none bg-no-repeat bg-right-4 pr-12 custom-select-arrow"
-                >
-                  <option value="">Package Interested In (optional)</option>
-                  <option value="startup">Startup Site - R4,000</option>
-                  <option value="business">Business Site - R7,000</option>
-                  <option value="store">Online Store - From R10,000</option>
-                  <option value="custom">Custom Project</option>
-                  <option value="notsure">Not Sure Yet</option>
-                </select>
-              </div>
-
-              {/* Website Type */}
-              <select
-                name="websiteType"
-                required
-                className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent 
-                           focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]
-                           appearance-none bg-no-repeat bg-right-4 pr-12 custom-select-arrow"
-              >
-                <option value="">What kind of website do you need?</option>
-                <option value="Brochure">Brochure / Business Site</option>
-                <option value="Ecommerce">E-commerce Store</option>
-                <option value="Blog">Blog / Content Site</option>
-                <option value="Redesign">Website Redesign</option>
-                <option value="Other">Other</option>
+              <select name="packageInterest" className={`${contactInputClass} ${selectArrowClass}`}>
+                <option value="">Package Interested In (optional)</option>
+                {PACKAGES.map((pkg) => (
+                  <option key={pkg.title} value={pkg.enquiryValue}>
+                    {pkg.title} - {pkg.period === "From" ? `From ${pkg.price}` : pkg.price}
+                  </option>
+                ))}
+                <option value="custom">Custom Project</option>
+                <option value="notsure">Not Sure Yet</option>
               </select>
 
-              <div>
+              <Field error={errors.websiteType}>
+                <select name="websiteType" required className={`${contactInputClass} ${selectArrowClass}`}>
+                  <option value="">What kind of website do you need?</option>
+                  {CONTACT_WEBSITE_TYPES.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {type.label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+
+              <Field error={errors.goals}>
                 <textarea
                   name="goals"
                   placeholder="I need more leads, online bookings, or better credibility. My goals are..."
                   rows={3}
                   required
-                  className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
+                  className={contactInputClass}
                 />
-                {errors.goals && <p className="text-red-500 text-sm mt-1">{errors.goals}</p>}
-              </div>
+              </Field>
 
               <textarea
                 name="message"
                 placeholder="Additional information or questions..."
                 rows={4}
-                className="w-full p-4 rounded-xl bg-[var(--primary-color)] border border-transparent focus:border-[var(--accent-color-1)] focus:outline-none text-[var(--text-dark)]"
+                className={contactInputClass}
               />
 
               <motion.button
@@ -176,13 +136,18 @@ export default function Contact() {
               >
                 {status === "sending" ? "Sending Message..." : "Send Inquiry"}
               </motion.button>
+
+              {status === "success" && (
+                <p className="text-green-400 text-center">Thanks — I'll get back to you soon.</p>
+              )}
+              {status === "error" && (
+                <p className="text-red-400 text-center">Something went wrong. Please try again or email me directly.</p>
+              )}
             </form>
           </div>
 
-          {/* Contact Info Column */}
           <div className="flex flex-col justify-start bg-[var(--secondary-color)] p-8 md:p-12 rounded-3xl border border-[var(--accent-color-1)] text-[var(--text-light)]">
             <h3 className="text-2xl font-semibold mb-8">Other Ways to Reach Me</h3>
-            
             <div className="space-y-8">
               <div className="flex gap-4">
                 <div className="text-3xl text-[var(--accent-color-1)] mt-1">
@@ -190,8 +155,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Call or WhatsApp</p>
-                  <a href="tel:+27768740744" className="text-lg hover:text-[var(--accent-color-1)] transition-colors">
-                    +27 76 874 0744
+                  <a href={`tel:${SITE.phoneTel}`} className="text-lg hover:text-[var(--accent-color-1)] transition-colors">
+                    {SITE.phoneDisplay}
                   </a>
                 </div>
               </div>
@@ -201,8 +166,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <a href="mailto:stefan@sfgweb.co.za" className="text-lg hover:text-[var(--accent-color-1)] transition-colors">
-                    stefan@sfgweb.co.za
+                  <a href={`mailto:${SITE.email}`} className="text-lg hover:text-[var(--accent-color-1)] transition-colors">
+                    {SITE.email}
                   </a>
                 </div>
               </div>

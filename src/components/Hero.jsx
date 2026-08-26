@@ -1,14 +1,13 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-[85vh] flex items-center text-[var(--text-light)]);">
+    <section id="home" className="min-h-[85vh] flex items-center text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] xl:grid-cols-[58%_42%] md:gap-12 lg:gap-8 xl:gap-12 items-center">
-          
-          {/* Left Column */}
           <div className="space-y-6 lg:space-y-8">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -23,7 +22,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-white font-manrope"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-white font-display"
             >
               Websites That Help You{" "}
               <span className="text-[var(--accent-color-1)]">Get More Customers</span>
@@ -59,7 +58,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column - Visual */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -76,13 +74,12 @@ export default function Hero() {
                 priority
               />
 
-              {/* Floating Badges */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity }}
                 className="hidden sm:block absolute -top-4 -right-4 bg-[var(--accent-color-1)] text-black rounded-2xl shadow-xl px-5 py-3 text-sm font-semibold whitespace-nowrap"
               >
-                ⚡ Lightning-Fast Websites
+                Lightning-Fast Websites
               </motion.div>
 
               <motion.div
@@ -90,7 +87,7 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
                 className="hidden sm:block absolute -bottom-4 -left-4 bg-[var(--secondary-color)] border border-[var(--accent-color-1)] text-white rounded-2xl shadow-xl px-5 py-3 text-sm font-semibold whitespace-nowrap backdrop-blur-sm"
               >
-                📱 Fully Responsive Design
+                Fully Responsive Design
               </motion.div>
             </div>
           </motion.div>
