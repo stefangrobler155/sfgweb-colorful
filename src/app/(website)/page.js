@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import WhyMe from "@/components/WhyMe";
 import RecentWork from "@/components/RecentWork";
 import Process from "@/components/Process";
+import Scope from "@/components/Scope";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <PriceList />
       <WhyMe />
       <Process />
+      <Scope />
       <RecentWork />
       <Testimonials />
       <Contact />

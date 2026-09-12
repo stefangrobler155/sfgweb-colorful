@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { SITE } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
               className="uppercase tracking-[1.5px] md:tracking-[4px] text-[11px] md:text-sm font-semibold text-[var(--accent-color-1)]"
             >
-              CUSTOM WEBSITES • ECOMMERCE • REDESIGNS
+              Websites for small businesses
             </motion.p>
 
             <motion.h1
@@ -24,8 +25,8 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: "easeOut" }}
               className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.08] text-white font-display"
             >
-              Websites That Help You{" "}
-              <span className="text-[var(--accent-color-1)]">Get More Customers</span>
+              A modern website that helps your business{" "}
+              <span className="text-[var(--accent-color-1)]">look credible online</span>
             </motion.h1>
 
             <motion.p
@@ -34,7 +35,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.3 }}
               className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl"
             >
-              Professional, fast-loading websites built for small businesses, service providers, and online stores.
+              {SITE.tagline}
             </motion.p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -44,18 +45,19 @@ export default function Hero() {
                 whileTap={{ scale: 0.97 }}
                 className="bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-[var(--text-light)] font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all text-center"
               >
-                Get a Free Quote
+                {SITE.cta}
               </motion.a>
 
               <motion.a
-                href="#services"
+                href="#packages"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="border border-[var(--accent-color-1)] text-[var(--text-light)] hover:bg-white/10 font-semibold px-8 py-4 rounded-2xl transition-all text-center"
               >
-                Services & Pricing
+                View packages
               </motion.a>
             </div>
+            <p className="text-sm text-gray-500">Based in the Free State · Available across South Africa</p>
           </div>
 
           <motion.div
@@ -67,7 +69,7 @@ export default function Hero() {
             <div className="relative w-full max-w-lg">
               <Image
                 src="/hero_img.webp"
-                alt="Professional website example"
+                alt="Example of a professional small-business website"
                 width={520}
                 height={580}
                 className="rounded-3xl shadow-2xl w-full h-auto"
@@ -79,7 +81,7 @@ export default function Hero() {
                 transition={{ duration: 3.5, repeat: Infinity }}
                 className="hidden sm:block absolute -top-4 -right-4 bg-[var(--accent-color-1)] text-black rounded-2xl shadow-xl px-5 py-3 text-sm font-semibold whitespace-nowrap"
               >
-                Lightning-Fast Websites
+                Clear packages
               </motion.div>
 
               <motion.div
@@ -87,7 +89,7 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
                 className="hidden sm:block absolute -bottom-4 -left-4 bg-[var(--secondary-color)] border border-[var(--accent-color-1)] text-white rounded-2xl shadow-xl px-5 py-3 text-sm font-semibold whitespace-nowrap backdrop-blur-sm"
               >
-                Fully Responsive Design
+                Built to work on mobile
               </motion.div>
             </div>
           </motion.div>

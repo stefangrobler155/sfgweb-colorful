@@ -1,26 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaRocket, FaBuilding, FaShoppingCart } from "react-icons/fa";
-import { PACKAGES } from "@/lib/site";
+import { FaRocket, FaBuilding, FaBriefcase } from "react-icons/fa";
+import { PACKAGES, SITE } from "@/lib/site";
 import { containerVariants, cardVariants, hoverLift } from "@/lib/motion";
 import SectionHeader from "@/components/SectionHeader";
 
 const ICONS = {
   rocket: FaRocket,
   building: FaBuilding,
-  cart: FaShoppingCart,
+  briefcase: FaBriefcase,
 };
 
 export default function PriceList() {
   return (
-    <section id="pricing" className="py-12 text-[var(--text-light)]">
+    <section id="packages" className="py-12 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
-          eyebrow="Pricing"
-          title="Affordable Packages That"
-          highlight="Drive Growth"
-          subtitle="Transparent pricing with no hidden fees. We take the hassle out of getting online, so you can focus on what you do best—running your business."
+          eyebrow="Packages"
+          title="Straightforward pricing for"
+          highlight="standard websites"
+          subtitle="Three clear options for most small businesses. Hosting and domain are separate so you keep ownership of your online presence."
         />
 
         <motion.div
@@ -43,7 +43,7 @@ export default function PriceList() {
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1 bg-[var(--accent-color-1)] text-sm font-semibold rounded-full">
-                    Most Popular
+                    Most popular
                   </div>
                 )}
 
@@ -68,14 +68,12 @@ export default function PriceList() {
                   ))}
                 </ul>
 
-                {pkg.note && <p className="text-sm text-zinc-400 mb-6">{pkg.note}</p>}
-
                 <div className="mt-auto pt-6 border-t border-[var(--primary-color)]">
                   <a
                     href="#contact"
                     className="block w-full text-center bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 group-hover:scale-[1.02]"
                   >
-                    {pkg.buttonText}
+                    {SITE.cta}
                   </a>
                 </div>
               </motion.div>
@@ -83,15 +81,39 @@ export default function PriceList() {
           })}
         </motion.div>
 
-        <p className="text-center text-sm text-gray-400 mt-8 max-w-2xl mx-auto">
-          * <span className="text-white font-medium">Hosting & Domain Not Included:</span> To ensure full ownership of your website, clients purchase their own domain and hosting. We provide a simple step-by-step guide on exactly what to buy and help you get set up.
-        </p>
-        <p className="text-center text-zinc-400 mt-10 text-sm">
-          Need something custom?{" "}
-          <a href="#contact" className="text-[var(--accent-color-1)] hover:underline">
-            Let's discuss your project
+        <div className="mt-10 bg-[var(--secondary-color)] border border-[var(--accent-color-1)] rounded-3xl p-8 md:p-10 text-center">
+          <h3 className="text-2xl font-semibold mb-3">Custom development</h3>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-6">
+            Ecommerce, booking systems, dashboards, API integrations, headless WordPress/WooCommerce, and other non-standard work — quoted individually, not forced into a fixed package.
+          </p>
+          <a
+            href="#contact"
+            className="inline-block bg-transparent border border-[var(--accent-color-1)] hover:bg-[var(--accent-color-1)] text-white font-semibold py-3 px-8 rounded-2xl transition-colors"
+          >
+            {SITE.cta}
           </a>
-        </p>
+        </div>
+
+        <div className="mt-10 max-w-3xl mx-auto text-sm text-gray-400 space-y-2 text-center">
+          <p>
+            <span className="text-white font-medium">Domain:</span> you register and own it; we help connect it.
+          </p>
+          <p>
+            <span className="text-white font-medium">Hosting:</span> sites are deployed on Vercel; hosting is separate from the build price.
+          </p>
+          <p>
+            <span className="text-white font-medium">Email:</span> separate from the website.
+          </p>
+          <p>
+            <span className="text-white font-medium">Revisions:</span> one organised feedback round within the agreed scope. Extra work is quoted.
+          </p>
+          <p>
+            <span className="text-white font-medium">Timeline:</span> typically 5–10 business days after all content, assets, and information are received.
+          </p>
+          <p className="pt-4">
+            Website Care from R150/month — hosting attention, basic monitoring, and technical support after launch. Not unlimited design changes.
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -18,10 +18,10 @@ export default function Process() {
     <section id="process" className="py-16 bg-transparent">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <SectionHeader
-          eyebrow="Transparent Process"
-          title="How We Work"
-          highlight="Together"
-          subtitle="A clear, efficient 4-step process designed to deliver great results with no surprises."
+          eyebrow="How it works"
+          title="From first conversation"
+          highlight="to launch"
+          subtitle="A clear four-step process. Client delays, missing content, or out-of-scope requests can extend the timeline."
         />
 
         <motion.div

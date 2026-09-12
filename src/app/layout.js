@@ -4,18 +4,18 @@ import { SITE } from "@/lib/site";
 
 export const metadata = {
   metadataBase: new URL(SITE.url),
-  title: "SFGWeb | Professional Websites for Small Businesses in South Africa",
+  title: "SFGWeb | Modern Websites for Small Businesses in South Africa",
   description:
-    "Fast, modern websites built for small businesses, service providers & online stores. Based in Free State. Get more customers with a professional website.",
+    "Professionally built, mobile-friendly websites for small businesses. Clear packages from R7,500. Based in the Free State, available across South Africa.",
   keywords: [
     "web design south africa",
     "website designer free state",
-    "wordpress developer",
-    "ecommerce website",
+    "small business website",
+    "professional website south africa",
   ],
   openGraph: {
-    title: "SFGWeb - Professional Websites",
-    description: "We build fast, high-converting websites that help businesses grow.",
+    title: "SFGWeb — Modern websites for small businesses",
+    description: "Clear packages, a straightforward process, and a site that presents your business properly.",
     images: [{ url: "/logo_icon.png" }],
   },
 };

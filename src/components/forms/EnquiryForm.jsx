@@ -202,8 +202,8 @@ export default function EnquiryForm() {
                       {pkg.title}
                     </option>
                   ))}
-                  <option value="Custom">Custom Solution</option>
-                  <option value="Other">Other</option>
+                  <option value="Custom">Custom</option>
+                  <option value="Not sure">Not sure</option>
                 </select>
               </Field>
 

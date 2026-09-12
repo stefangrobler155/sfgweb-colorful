@@ -21,7 +21,7 @@ export default function Testimonials() {
   return (
     <section className="py-12 bg-transparent text-[var(--text-light)]" id="testimonials">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionHeader eyebrow="Testimonials" title="What Clients Say" />
+        <SectionHeader eyebrow="Testimonials" title="What clients say" />
 
         <div className="bg-transparent rounded-3xl p-10 md:p-16 relative">
           <FaQuoteLeft className="text-6xl text-[var(--accent-color-1)] opacity-80 absolute top-8 left-8" />

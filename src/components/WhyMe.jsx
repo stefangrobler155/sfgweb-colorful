@@ -18,10 +18,10 @@ export default function WhyMe() {
     <section id="why-me" className="py-12 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <SectionHeader
-          eyebrow="Why Work With Me"
-          title="Built to Help Your Business"
-          highlight="Grow"
-          subtitle="I don’t just create websites — I create digital tools that attract clients and build trust."
+          eyebrow="Why work with us"
+          title="Professional delivery without"
+          highlight="the agency overhead"
+          subtitle="Clear packages, modern build quality, and a process that stays simple."
         />
 
         <motion.div

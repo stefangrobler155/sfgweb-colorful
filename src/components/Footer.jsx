@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <h4 className="font-semibold mb-5 text-[var(--accent-color-1)]">Connect With Me</h4>
+            <h4 className="font-semibold mb-5 text-[var(--accent-color-1)]">Get a quote</h4>
             <div className="flex gap-5 text-3xl mb-10">
               <a
                 href={SITE.whatsapp}

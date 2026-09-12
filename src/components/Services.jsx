@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCode, FaShoppingCart, FaRedo, FaCheck } from "react-icons/fa";
+import { FaCode, FaListAlt, FaCogs, FaCheck } from "react-icons/fa";
 import { SERVICES } from "@/lib/site";
 import { containerVariants, cardVariants, hoverLift } from "@/lib/motion";
 import SectionHeader from "@/components/SectionHeader";
 
 const ICONS = {
   code: FaCode,
-  cart: FaShoppingCart,
-  redo: FaRedo,
+  list: FaListAlt,
+  cogs: FaCogs,
 };
 
 export default function Services() {
@@ -17,10 +17,10 @@ export default function Services() {
     <section id="services" className="py-12 text-[var(--text-light)]">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
-          eyebrow="Services"
-          title="Services That"
-          highlight="Drive Results"
-          subtitle="I build high-performing websites that help businesses attract more clients and increase revenue."
+          eyebrow="What we do"
+          title="Websites built for"
+          highlight="real small businesses"
+          subtitle="You bring the content and brand basics. We handle structure, design, and technical delivery."
         />
 
         <motion.div
@@ -57,13 +57,16 @@ export default function Services() {
                     href="#contact"
                     className="text-[var(--accent-color-1)] hover:text-[var(--accent-color-5)] font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300"
                   >
-                    Get a quote for this service →
+                    Get a quote →
                   </a>
                 </div>
               </motion.div>
             );
           })}
         </motion.div>
+        <p className="text-center text-gray-400 mt-10 max-w-2xl mx-auto">
+          Standard websites are fixed-scope packages. Anything more advanced is scoped and quoted separately.
+        </p>
       </div>
     </section>
   );
