@@ -94,6 +94,13 @@ export default function Navbar() {
               )}
             </Link>
           ))}
+          <Link
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className="bg-[var(--accent-color-1)] hover:bg-[var(--accent-color-5)] text-white font-semibold px-5 py-2 rounded-xl transition-colors"
+          >
+            {SITE.cta}
+          </Link>
         </div>
 
         <button
@@ -129,6 +136,13 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="mt-3 text-center bg-[var(--accent-color-1)] text-white font-semibold py-4 px-4 rounded-xl"
+              >
+                {SITE.cta}
+              </Link>
             </div>
           </motion.div>
         )}

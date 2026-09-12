@@ -16,10 +16,10 @@ export default function RecentWork() {
     <section id="recent-work" className="py-12">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
-          eyebrow="Portfolio"
-          title="Recent"
-          highlight="Work"
-          subtitle="Real results for real businesses. Here is a look at how we help companies grow online."
+          eyebrow="Recent work"
+          title="Sites for"
+          highlight="real businesses"
+          subtitle="Clean structure, clear calls to action, built to work on mobile and desktop."
         />
 
         <motion.div
@@ -50,7 +50,7 @@ export default function RecentWork() {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 flex items-center justify-center">
                   <span className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 border-2 border-white px-6 py-2 rounded-full">
-                    View Live Site ↗
+                    View live site ↗
                   </span>
                 </div>
               </div>
